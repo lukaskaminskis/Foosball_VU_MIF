@@ -1,0 +1,26 @@
+3 Grupë - Frisby Boys
+
+Foosball
+
+Tomas Kiziela
+Lukas Kaminskis
+Deimantas Gedgaudas
+
+1. Input
+	- Team members
+	- Goals
+
+2. Output
+	- Winner
+	- Stats (number of goals for start)
+
+
+Tasks:
+1. Pasiruoðti programas
+2. Repozitorijà susikurti
+3. Pasiskirstyti atsakomybes
+4. Pasiþiûrëti kritines situacijas
+5. Susikurti programos ðablonà
+6. Paieðkoti informacijos apie galimas naudoti bibliotekas
+
+MVP (Minimum Viable Product)
