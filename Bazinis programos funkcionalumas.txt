@@ -1,0 +1,5 @@
+Bazinës programos funkcijos:
+- Pridëti ar atimti taðkus
+- Skaièiuoti ávarèius
+- Saugoti þaidimø istorijà
+- Pavaizduoti ávairias þaidimo statistikas
