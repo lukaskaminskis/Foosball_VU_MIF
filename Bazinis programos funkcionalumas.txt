@@ -1,5 +1,5 @@
-Bazinës programos funkcijos:
-- Pridëti ar atimti taðkus
-- Skaièiuoti ávarèius
-- Saugoti þaidimø istorijà
-- Pavaizduoti ávairias þaidimo statistikas
+Bazines programos funkcijos:
+- Prideti ar atimti taskus
+- Skaiciuoti Ã¡varÃ¨ius
+- Saugoti zaidimo istorija
+- Pavaizduoti ivairias zaidimo statistikas
