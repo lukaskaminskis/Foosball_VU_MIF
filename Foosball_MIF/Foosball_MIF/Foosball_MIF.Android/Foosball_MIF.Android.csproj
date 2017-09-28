@@ -49,6 +49,15 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.Android.Core, Version=2.3.20172.189, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\C1.Android.Core.2.3.20172.189\lib\MonoAndroid10\C1.Android.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Xamarin.Forms.Core, Version=2.3.20172.189, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\C1.Xamarin.Forms.Core.2.3.20172.189\lib\MonoAndroid10\C1.Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Xamarin.Forms.Core.Platform.Android, Version=2.3.20172.189, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\C1.Xamarin.Forms.Core.2.3.20172.189\lib\MonoAndroid10\C1.Xamarin.Forms.Core.Platform.Android.dll</HintPath>
+    </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.4.0.280\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
     </Reference>

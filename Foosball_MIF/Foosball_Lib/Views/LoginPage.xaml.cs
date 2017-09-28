@@ -16,6 +16,16 @@ namespace Foosball_Lib.Views
         public LoginPage()
         {
             InitializeComponent();
+            Init();
+        }
+
+        void Init()
+        {
+            BackgroundColor = Constants.BackgroundColor;
+            Lbl_Username.TextColor = Constants.MainTextColor;
+            Lbl_Password.TextColor = Constants.MainTextColor;
+            ActivitySpinner.IsVisible = false;
+
         }
 
         void SignInProcedure(object e, EventArgs s)
@@ -29,6 +39,11 @@ namespace Foosball_Lib.Views
             {
                 DisplayAlert("Login", "Login failed, empty password or username", "Ok");
             }
+
+        }
+
+        void RegisterProcedure()
+        {
 
         }
     }

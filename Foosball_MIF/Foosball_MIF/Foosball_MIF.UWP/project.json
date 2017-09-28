@@ -1,5 +1,6 @@
 ﻿{
   "dependencies": {
+    "C1.Xamarin.Forms.Core": "2.3.20172.189",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
     "Xamarin.Forms": "2.4.0.280"
   },
