@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foosball_Lib.User
+namespace Foosball_Lib.Models
 {
     public class User
     {
@@ -14,27 +14,35 @@ namespace Foosball_Lib.User
         private int Wins { get; set; }
         private int Loses { get; set; }
 
-        public User(string _userId, string _password)
+        public User(string UserId, string Password)
         {
-            this.UserId = _userId;
-            this.Password = _password;
+            this.UserId = UserId;
+            this.Password = Password;
         }
 
-        public void ChangePassword(string _Password)
+        public bool CheckInformation()
         {
-            this.Password = _Password;
+            if (this.UserId != "" || this.Password != "")
+                return true;
+            else
+                return false;
         }
 
-        public void MatchWon(string _UserId)
+        public void ChangePassword(string Password)
+        {
+            this.Password = Password;
+        }
+
+        public void MatchWon(string UserId)
         {
             MatchCount++;
             Wins++;
         }
 
-        public void MatchLost(string _UserId)
+        public void MatchLost(string UserId)
         {
             MatchCount++;
             Loses++;
         }
-}
+    }
 }

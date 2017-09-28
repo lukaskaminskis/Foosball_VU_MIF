@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Foosball_Lib.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace Foosball_MIF
 		{
 			InitializeComponent();
 
-			MainPage = new Foosball_MIF.MainPage();
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart ()
