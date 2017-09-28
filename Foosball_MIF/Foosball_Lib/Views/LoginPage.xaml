@@ -14,9 +14,9 @@
                 <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
 
                 <Label x:Name="Lbl_Username" Text="Username" />
-                <Entry x:Name="Entry_Username" Placeholder="usrname" />
+                <Entry x:Name="Entry_Username" Placeholder="Username"/>
                 <Label x:Name="Lbl_Password" Text="Password" />
-                <Entry x:Name="Entry_Password" Placeholder="password" />
+                <Entry x:Name="Entry_Password" Placeholder="Password"/>
                 <Button x:Name="Btn_SignIn" Text="Sign in" Clicked="SignInProcedure"/>
                 <Label x:Name="Lbl_Or" Text="Or" HorizontalOptions="Center"/>
                 <Button x:Name="Btn_Register" Text="Register" Clicked="RegisterProcedure"/>

@@ -22,10 +22,10 @@ namespace Foosball_Lib.Models
 
         public bool CheckInformation()
         {
-            if (this.UserId != "" || this.Password != "")
-                return true;
-            else
+            if (this.UserId == null || this.Password == null || this.UserId == "" || this.Password == "")
                 return false;
+            else
+                return true;
         }
 
         public void ChangePassword(string Password)
