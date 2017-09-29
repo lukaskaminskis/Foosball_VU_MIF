@@ -10,9 +10,12 @@ namespace Foosball_Lib.Models
     {
         private string UserId { get; set; }
         private string Password { get; set; }
+        private string Email { get; set; }
         private int MatchCount { get; set; }
         private int Wins { get; set; }
         private int Loses { get; set; }
+
+        public User(){}
 
         public User(string UserId, string Password)
         {
@@ -26,6 +29,11 @@ namespace Foosball_Lib.Models
                 return false;
             else
                 return true;
+        }
+
+        public void ChangeEmail(string Email)
+        {
+            this.Email = Email;
         }
 
         public void ChangePassword(string Password)

@@ -12,6 +12,7 @@ namespace Foosball_MIF
 	{
 		public App ()
 		{
+
 			InitializeComponent();
 
 			MainPage = new LoginPage();

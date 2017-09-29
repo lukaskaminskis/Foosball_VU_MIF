@@ -37,6 +37,7 @@ namespace Foosball_Lib.Views
             if (user.CheckInformation())
             {
                 DisplayAlert("Login","Login succesful", "Ok");
+                Navigation.PushModalAsync(new PropertiesPage());
             }
             else
             {
