@@ -5,7 +5,7 @@
              Title="Properties">
     <ContentPage.Content>
         <StackLayout>
-            <Label x:Name="Lbl_Hello" Text="Hello, Foosball lover!" FontSize="24on "/>
+            <Label x:Name="Lbl_Hello" Text="Hello, Foosball lover!" FontSize="24 "/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
