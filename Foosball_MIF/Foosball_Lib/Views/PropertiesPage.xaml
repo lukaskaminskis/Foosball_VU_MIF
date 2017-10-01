@@ -4,6 +4,7 @@
              x:Class="Foosball_Lib.Views.PropertiesPage"
              Title="Properties">
     <ContentPage.Content>
+
         <StackLayout x:Name="MasterLayout">
             <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
                 <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
@@ -17,5 +18,6 @@
                 <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure" />
             </StackLayout>
         </StackLayout>
+      
     </ContentPage.Content>
 </ContentPage>
