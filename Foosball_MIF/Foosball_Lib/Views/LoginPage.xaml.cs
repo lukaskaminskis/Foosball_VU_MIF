@@ -25,7 +25,7 @@ namespace Foosball_Lib.Views
             Lbl_Username.TextColor = Constants.MainTextColor;
             Lbl_Password.TextColor = Constants.MainTextColor;
             ActivitySpinner.IsVisible = false;
-            LoginIcon.HeightRequest = Constants.LoginIconHeight;
+            LogoIcon.HeightRequest = Constants.LoginIconHeight;
 
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             Entry_Password.Completed += (s, e) => SignInProcedure(s, e);
@@ -34,6 +34,7 @@ namespace Foosball_Lib.Views
         void SignInProcedure(object e, EventArgs s)
         {
             User user = new User(Entry_Username.Text, Entry_Password.Text);
+            Constants.LocalUser = user;
             if (user.CheckInformation())
             {
                 DisplayAlert("Login","Login succesful", "Ok");
