@@ -35,7 +35,12 @@ namespace Foosball_Lib.Views
 
         public void SetGoalLimitProcedure(object e, EventArgs s)
         {
+            Navigation.PushModalAsync(new GoalLimit());
+        }
 
+        public void StartMatchProcedure(object e, EventArgs s)
+        {
+            Navigation.PushModalAsync(new MatchPage());
         }
     }
 }

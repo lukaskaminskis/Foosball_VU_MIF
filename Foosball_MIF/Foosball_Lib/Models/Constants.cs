@@ -14,6 +14,8 @@ namespace Foosball_Lib.Models
         public static int LoginIconHeight = 120;
         public static int MaxGoalLimit = 10;
         public static string OponentName = "";
+        public static int HomeGoalCount = 0;
+        public static int AwayGoalCount = 0;
 
         public static User LocalUser;
         public static int GoalLimit;
