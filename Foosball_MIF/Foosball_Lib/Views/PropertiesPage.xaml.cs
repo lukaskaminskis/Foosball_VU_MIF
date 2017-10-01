@@ -23,6 +23,24 @@ namespace Foosball_Lib.Views
         {
             BackgroundColor = Constants.BackgroundColor;
             Lbl_Hello.TextColor = Constants.MainTextColor;
+            Lbl_User.TextColor = Constants.MainTextColor;
+            Lbl_User.Text = "Welcome " + Constants.LocalUser.UserId;
+            LogoIcon.HeightRequest = Constants.LoginIconHeight;
+        }
+
+        public void NewOponentProcedure(object e, EventArgs s)
+        {
+            Navigation.PushModalAsync(new EnterOponentName());
+        }
+
+        public void SetGoalLimitProcedure(object e, EventArgs s)
+        {
+            Navigation.PushModalAsync(new GoalLimit());
+        }
+
+        public void StartMatchProcedure(object e, EventArgs s)
+        {
+            Navigation.PushModalAsync(new MatchPage());
         }
     }
 }

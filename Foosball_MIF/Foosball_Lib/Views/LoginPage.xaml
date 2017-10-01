@@ -7,7 +7,7 @@
         
         <StackLayout x:Name="MasterLayout">
             <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
-                <Image x:Name="LoginIcon" Source="Icon.png" Margin="0,80,0,0" />
+                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
             </StackLayout>
             
             <StackLayout x:Name="LoginEntryStack" VerticalOptions="StartAndExpand" Margin="50,50,50,50">
@@ -17,7 +17,7 @@
                 <Label x:Name="Lbl_Username" Text="Username" />
                 <Entry x:Name="Entry_Username" Placeholder="Username"/>
                 <Label x:Name="Lbl_Password" Text="Password" />
-                <Entry x:Name="Entry_Password" Placeholder="Password"/>
+                <Entry x:Name="Entry_Password" Placeholder="Password" IsPassword="True"/>
                 <Button x:Name="Btn_SignIn" Text="Sign in" Clicked="SignInProcedure"/>
                 <Label x:Name="Lbl_Or" Text="Or" HorizontalOptions="Center"/>
                 <Button x:Name="Btn_Register" Text="Register" Clicked="RegisterProcedure"/>

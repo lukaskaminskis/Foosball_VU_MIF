@@ -12,13 +12,13 @@ namespace Foosball_Lib.Models
         public static Color BackgroundColor = Color.FromRgb(58, 153, 215);
         public static Color MainTextColor = Color.White;
         public static int LoginIconHeight = 120;
-        public static int MaxGoalLimit = 10; 
+        public static int MaxGoalLimit = 10;
+        public static string OponentName = "";
+        public static int HomeGoalCount = 0;
+        public static int AwayGoalCount = 0;
 
-        private static User localUser = null;
-        public static User LocalUser { get => localUser; set => localUser = value; }
-
-        private static int goalLimit;
-        public static int GoalLimit { get => goalLimit; set => goalLimit = value; }
+        public static User LocalUser;
+        public static int GoalLimit;
 
     }
 }
