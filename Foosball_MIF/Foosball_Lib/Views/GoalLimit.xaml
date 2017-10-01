@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Foosball_Lib.Views.GoalLimit"
+             Title="Goal Limit">
+    <ContentPage.Content>
+
+        <StackLayout x:Name="MasterLayout">
+            <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
+            </StackLayout>
+
+            <StackLayout x:Name="GoalLimitStack" VerticalOptions="CenterAndExpand" Margin="50,50,50,50">
+                <Label x:Name="Lbl_GoalLimit" Text="Goal Limit" />
+                <Entry x:Name="Entry_GoalLimit" 
+                       Text="0 - 10"
+                       Keyboard="Numeric" />
+                <Button x:Name="Btn_Submit" Text="Submit" Clicked="SubmitProcedure" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

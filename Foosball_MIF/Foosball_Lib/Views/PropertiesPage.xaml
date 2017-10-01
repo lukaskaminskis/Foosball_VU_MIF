@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Foosball_Lib.Views.PropertiesPage"
+             Title="Properties">
+    <ContentPage.Content>
+
+        <StackLayout x:Name="MasterLayout">
+            <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
+            </StackLayout>
+
+            <StackLayout x:Name="PropertiesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label x:Name="Lbl_Hello" Text="Hello, Foosball lover!" FontSize="24.0" />
+                <Label x:Name="Lbl_User" Text="" />
+                <Button x:Name="Btn_Oponent" Text="Enter Oponent name" Clicked="NewOponentProcedure" />
+                <Button x:Name="Btn_GoalLimit" Text="Set Goal limit" Clicked="SetGoalLimitProcedure" />
+                <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure" />
+            </StackLayout>
+        </StackLayout>
+      
+    </ContentPage.Content>
+</ContentPage>

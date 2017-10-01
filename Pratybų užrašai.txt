@@ -24,3 +24,17 @@ Tasks:
 6. Paieðkoti informacijos apie galimas naudoti bibliotekas
 
 MVP (Minimum Viable Product)
+
+2 pratybos
+
+Komandos turi turëti unikalø pavadinimà, pavadinimas turi slaptaþodá kurá þino tik komandos nariai.
+
+Sukurti duomenø bazæ, kurioje komandø pavadinimai susieti su slaptaþodþiu, istorija
+
+Komanda gali pasirinkti savo ikonà ið pateiktø.
+
+Statistics:
+	- Win rate
+	- Average match duration
+	- Average winning score (+)
+	- Average losing score (-)

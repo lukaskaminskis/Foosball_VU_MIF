@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Foosball_Lib.Views.MatchPage"
+             Title="Match">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
+            </StackLayout>
+
+            <StackLayout x:Name="PropertiesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label x:Name="Label_HomeTeam" Text="" />
+                <Button x:Name="Btn_HomeGoal" Text="" Clicked="HomeGoalProcedure"/>
+                <Label x:Name="Label_AwayTeam" Text="" />
+                <Button x:Name="Btn_AwayGoal" Text="" Clicked="AwayGoalProcedure"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

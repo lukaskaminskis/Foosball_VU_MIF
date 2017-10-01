@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Foosball_Lib.Views.EnterOponentName"
+             Title="Oponent name">
+    <ContentPage.Content>
+        
+        <StackLayout x:Name="MasterLayout">
+            <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
+                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
+            </StackLayout>
+
+            <StackLayout x:Name="OponentNameStack" VerticalOptions="CenterAndExpand" Margin="50,50,50,50">
+                <Label x:Name="Lbl_OponentName" Text="Oponent Name" />
+                <Entry x:Name="Entry_OponentName" Text="Oponent Name" />
+                <Button x:Name="Btn_Submit" Text="Submit" Clicked="SubmitProcedure" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

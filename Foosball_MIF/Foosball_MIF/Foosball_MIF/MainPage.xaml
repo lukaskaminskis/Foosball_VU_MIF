@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:Foosball_MIF"
              x:Class="Foosball_MIF.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout Orientation="Vertical" >
+        <Label HorizontalOptions="Center" Text="Label1" />
+        <Button HorizontalOptions="Center" Text="Button" />
+    </StackLayout>
 
 </ContentPage>
