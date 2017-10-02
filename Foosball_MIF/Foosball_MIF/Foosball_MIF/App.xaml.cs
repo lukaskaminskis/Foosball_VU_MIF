@@ -16,6 +16,7 @@ namespace Foosball_MIF
 			InitializeComponent();
 
 			MainPage = new LoginPage();
+
 		}
 
 		protected override void OnStart ()
@@ -32,5 +33,7 @@ namespace Foosball_MIF
 		{
 			// Handle when your app resumes
 		}
+
 	}
+
 }
