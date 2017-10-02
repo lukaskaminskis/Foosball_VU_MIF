@@ -25,7 +25,9 @@ namespace Foosball_Lib.Views
             Lbl_GoalLimit.TextColor = Constants.MainTextColor;
             LogoIcon.HeightRequest = Constants.LoginIconHeight;
             Entry_GoalLimit.Text = Constants.GoalLimit.ToString();
+           
         }
+		
 
         public void SubmitProcedure(object e, EventArgs s)
         {
