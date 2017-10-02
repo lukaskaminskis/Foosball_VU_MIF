@@ -17,6 +17,7 @@ namespace Foosball_Lib.Views
         {
             InitializeComponent();
             Init();
+            // Testing purposes
         }
 
         public void Init()
