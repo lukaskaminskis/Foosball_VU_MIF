@@ -48,7 +48,8 @@ namespace Foosball_Lib.Views
         public void AwayGoalProcedure(object e, EventArgs s)
         {
             Constants.AwayGoalCount++;
-            Label_AwayTeam.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Label_AwayTeam.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+
 
             if (Constants.AwayGoalCount >= Constants.GoalLimit)
             {
