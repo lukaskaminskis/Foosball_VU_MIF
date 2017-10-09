@@ -29,9 +29,7 @@ namespace Foosball_Lib.Views
 
         public void SubmitProcedure(object e, EventArgs s)
         {
-            if (Entry_GoalLimit.Text == null || Entry_GoalLimit.Text == "" 
-                || Int32.Parse(Entry_GoalLimit.Text) > 10
-                || Int32.Parse(Entry_GoalLimit.Text) <= 0)
+            if (Checkgoallimit(Entry_GoalLimit.Text))
             {
                 DisplayAlert("Entry error", "Please enter valid goal limit", "Ok");
             }
@@ -40,6 +38,12 @@ namespace Foosball_Lib.Views
                 Constants.GoalLimit = Int32.Parse(Entry_GoalLimit.Text);
                 Navigation.PushModalAsync(new PropertiesPage());
             }
+        }
+        public static bool Checkgoallimit(string Entry_Limit)
+        {
+            return (Entry_Limit == null || Entry_Limit == ""
+                || Int32.Parse(Entry_Limit) > 10
+                    || Int32.Parse(Entry_Limit) <= 0);
         }
     }
 }
