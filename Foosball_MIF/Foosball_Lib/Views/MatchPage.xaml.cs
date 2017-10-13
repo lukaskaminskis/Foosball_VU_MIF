@@ -22,19 +22,19 @@ namespace Foosball_Lib.Views
         public void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
-            Label_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
-            Label_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
-            Label_HomeGoal.TextColor = Constants.MainTextColor;
-            Label_AwayGoal.TextColor = Constants.MainTextColor;
+            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+            Btn_HomeGoal.TextColor = Constants.MainTextColor;
+            Btn_AwayGoal.TextColor = Constants.MainTextColor;
 
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " scored!";
-            Btn_AwayGoal.Text = Constants.OponentName + " scored!";
+            //Btn_HomeGoal.Text = Constants.LocalUser.UserId + " scored!";
+            //Btn_AwayGoal.Text = Constants.OponentName + " scored!";
         }
 
         public void HomeGoalProcedure(object e, EventArgs s)
         {
             Constants.HomeGoalCount++;
-            Label_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
             if (Constants.HomeGoalCount >= Constants.GoalLimit)
             {
                 DisplayAlert("Win", "Player " + Constants.OponentName + " won the game!", "Ok");
@@ -48,7 +48,7 @@ namespace Foosball_Lib.Views
         public void AwayGoalProcedure(object e, EventArgs s)
         {
             Constants.AwayGoalCount++;
-            Label_AwayTeam.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+            Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
 
             if (Constants.AwayGoalCount >= Constants.GoalLimit)
             {
