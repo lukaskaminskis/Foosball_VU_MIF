@@ -38,9 +38,9 @@ namespace Foosball_Lib.Views
             Navigation.PushModalAsync(new GoalLimit());
         }
 
-        public void StartMatchProcedure(object e, EventArgs s)
+        async public void StartMatchProcedure(object e, EventArgs s)
         {
-            Navigation.PushModalAsync(new MatchPage());
+            await Navigation.PushModalAsync(new MatchPage());
         }
     }
 }

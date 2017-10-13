@@ -1,22 +1,24 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Foosball_Lib.Views.MatchPage"
-             Title="Match">
+             Title="MatchTime">
     <ContentPage.Content>
-        <StackLayout>
-            
-            <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
-                <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
-            </StackLayout>
-
-            <StackLayout x:Name="PropertiesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                <Label x:Name="Label_HomeTeam" Text="" />
-                <Button x:Name="Btn_HomeGoal" Text="" Clicked="HomeGoalProcedure"/>
-                <Label x:Name="Label_AwayTeam" Text="" />
-                <Button x:Name="Btn_AwayGoal" Text="" Clicked="AwayGoalProcedure"/>
-            </StackLayout>
-
-        </StackLayout>
+        <Grid
+            BackgroundColor="White"
+            Padding="0,20,0,0">
+            <Button x:Name="Btn_HomeGoal" 
+                    Grid.Row="0" 
+                    Grid.ColumnSpan="2"
+                    Clicked="HomeGoalProcedure" 
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+            <Button x:Name="Btn_AwayGoal" 
+                    Grid.Row="1" 
+                    Grid.ColumnSpan="2" 
+                    Clicked="AwayGoalProcedure" 
+                    BackgroundColor="Red"
+                    TextColor="White"/>        
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
