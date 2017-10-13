@@ -18,6 +18,8 @@ namespace Foosball_Lib.Views
         {
             InitializeComponent();
             Init();
+
+           
         }
 
         void Init()
@@ -60,5 +62,7 @@ namespace Foosball_Lib.Views
         {
 
         }
+		
+		
     }
 }
