@@ -1,4 +1,5 @@
 ﻿using Foosball_Lib.Models;
+using Foosball_Lib.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,16 +36,24 @@ namespace Foosball_Lib.Views
 
         void SignInProcedure(object e, EventArgs s)
         {
-            User user = new User(Entry_Username.Text, Entry_Password.Text);
-            Constants.LocalUser = user;
-            if (user.CheckInformation())
+            Validation validation = new Validation();
+            if (validation.UsernamePatternMatch(Entry_Username.Text) && validation.PasswordPatternMatch(Entry_Password.Text))
             {
-                DisplayAlert("Login","Login succesful", "Ok");
-                Navigation.PushModalAsync(new PropertiesPage());
+                User user = new User(Entry_Username.Text, Entry_Password.Text);
+                Constants.LocalUser = user;
+                if (user.CheckInformation())
+                {
+                    DisplayAlert("Login", "Login succesful", "Ok");
+                    Navigation.PushModalAsync(new PropertiesPage());
+                }
+                else
+                {
+                    DisplayAlert("Login", "Login failed, empty password or username", "Ok");
+                }
             }
             else
             {
-                DisplayAlert("Login", "Login failed, empty password or username", "Ok");
+                DisplayAlert("Failed", "Password or username doesnt match pattern", "Ok");
             }
 
         }

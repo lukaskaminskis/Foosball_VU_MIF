@@ -8,7 +8,7 @@ namespace Foosball_Lib.Models
 {
     public class User
     {
-        public string UserId { get; set; }
+        public string UserId { get; private set; }
         private string Password { get; set; }
         private string Email { get; set; }
         private int MatchCount { get; set; }

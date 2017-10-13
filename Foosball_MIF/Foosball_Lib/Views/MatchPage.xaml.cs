@@ -22,19 +22,19 @@ namespace Foosball_Lib.Views
         public void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
-            Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
-            Btn_HomeGoal.TextColor = Constants.MainTextColor;
-            Btn_AwayGoal.TextColor = Constants.MainTextColor;
+            Label_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Label_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+            Label_HomeGoal.TextColor = Constants.MainTextColor;
+            Label_AwayGoal.TextColor = Constants.MainTextColor;
 
-           // Btn_HomeGoal.Text = Constants.LocalUser.UserId + " scored!";
-           // Btn_AwayGoal.Text = Constants.OponentName + " scored!";
+            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " scored!";
+            Btn_AwayGoal.Text = Constants.OponentName + " scored!";
         }
 
         public void HomeGoalProcedure(object e, EventArgs s)
         {
             Constants.HomeGoalCount++;
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Label_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
             if (Constants.HomeGoalCount >= Constants.GoalLimit)
             {
                 DisplayAlert("Win", "Player " + Constants.OponentName + " won the game!", "Ok");
@@ -48,15 +48,15 @@ namespace Foosball_Lib.Views
         public void AwayGoalProcedure(object e, EventArgs s)
         {
             Constants.AwayGoalCount++;
-            Btn_AwayGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
+            Label_AwayTeam.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
 
             if (Constants.AwayGoalCount >= Constants.GoalLimit)
             {
-            DisplayAlert("Win", Constants.OponentName + " won the game!", "Ok");
-            Constants.OponentName = "";
-            Constants.HomeGoalCount = 0;
-            Constants.AwayGoalCount = 0;
-            Navigation.PushModalAsync(new PropertiesPage());
+                DisplayAlert("Win", Constants.OponentName + " won the game!", "Ok");
+                Constants.OponentName = "";
+                Constants.HomeGoalCount = 0;
+                Constants.AwayGoalCount = 0;
+                Navigation.PushModalAsync(new PropertiesPage());
             }
 
         }

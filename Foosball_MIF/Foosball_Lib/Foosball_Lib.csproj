@@ -39,6 +39,7 @@
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\Validation.cs" />
     <Compile Include="Views\EnterOponentName.xaml.cs">
       <DependentUpon>EnterOponentName.xaml</DependentUpon>
     </Compile>
