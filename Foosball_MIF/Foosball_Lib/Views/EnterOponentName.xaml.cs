@@ -28,17 +28,23 @@ namespace Foosball_Lib.Views
             Entry_OponentName.Text = Constants.OponentName;
         }
 
-        public void SubmitProcedure(object e, EventArgs s)
+        public async void SubmitProcedure(object e, EventArgs s)
         {
             if (Validation.UsernamePatternMatch(Entry_OponentName.Text))
             {
                 Constants.OponentName = Entry_OponentName.Text;
-                Navigation.PushModalAsync(new PropertiesPage());
+                //Navigation.PushModalAsync(new PropertiesPage());
+                await Navigation.PopModalAsync();
             }
             else
             {
                 DisplayAlert(Labels.Failed, Labels.OpNameNotMatch, Labels.Ok);
             }
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

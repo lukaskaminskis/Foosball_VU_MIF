@@ -29,17 +29,17 @@ namespace Foosball_Lib.Views
             LogoIcon.HeightRequest = Constants.LoginIconHeight;
         }
 
-        public void NewOponentProcedure(object e, EventArgs s)
+        public async void NewOponentProcedure(object e, EventArgs s)
         {
-            Navigation.PushModalAsync(new EnterOponentName());
+            await Navigation.PushModalAsync(new EnterOponentName());
         }
 
-        public void SetGoalLimitProcedure(object e, EventArgs s)
+        public async void SetGoalLimitProcedure(object e, EventArgs s)
         {
-            Navigation.PushModalAsync(new GoalLimit());
+            await Navigation.PushModalAsync(new GoalLimit());
         }
 
-        async public void StartMatchProcedure(object e, EventArgs s)
+        public async void StartMatchProcedure(object e, EventArgs s)
         {
             if (!Validation.IsOpponentAssigned())
             {
@@ -53,6 +53,17 @@ namespace Foosball_Lib.Views
             {
                 await Navigation.PushModalAsync(new MatchPage());
             }
+        }
+
+        public async void Back()
+        {
+            Constants.OponentName = "";
+            Constants.LocalUser = null;
+            Constants.GoalLimit = 0;
+            Constants.OponentName = "";
+            Constants.HomeGoalCount = 0;
+            Constants.AwayGoalCount = 0;
+            await Navigation.PopModalAsync();
         }
     }
 }

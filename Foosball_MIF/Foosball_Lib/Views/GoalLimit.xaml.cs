@@ -27,7 +27,7 @@ namespace Foosball_Lib.Views
             Entry_GoalLimit.Text = Constants.GoalLimit.ToString();
         }
 
-        public void SubmitProcedure(object e, EventArgs s)
+        public async void SubmitProcedure(object e, EventArgs s)
         {
             if (Checkgoallimit(Entry_GoalLimit.Text))
             {
@@ -36,7 +36,8 @@ namespace Foosball_Lib.Views
             else
             {
                 Constants.GoalLimit = Int32.Parse(Entry_GoalLimit.Text);
-                Navigation.PushModalAsync(new PropertiesPage());
+                //Navigation.PushModalAsync(new PropertiesPage());
+                await Navigation.PopModalAsync();
             }
         }
         public static bool Checkgoallimit(string Entry_Limit)
@@ -44,6 +45,11 @@ namespace Foosball_Lib.Views
             return (Entry_Limit == null || Entry_Limit == ""
                 || Int32.Parse(Entry_Limit) > 10
                     || Int32.Parse(Entry_Limit) <= 0);
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }

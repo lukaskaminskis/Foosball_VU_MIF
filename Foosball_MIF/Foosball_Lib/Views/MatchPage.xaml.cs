@@ -26,39 +26,40 @@ namespace Foosball_Lib.Views
             Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
             Btn_HomeGoal.TextColor = Constants.MainTextColor;
             Btn_AwayGoal.TextColor = Constants.MainTextColor;
-
-            //Btn_HomeGoal.Text = Constants.LocalUser.UserId + " scored!";
-            //Btn_AwayGoal.Text = Constants.OponentName + " scored!";
         }
 
-        public void HomeGoalProcedure(object e, EventArgs s)
+        public async void HomeGoalProcedure(object e, EventArgs s)
         {
             Constants.HomeGoalCount++;
             Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
             if (Constants.HomeGoalCount >= Constants.GoalLimit)
             {
-                DisplayAlert(Labels.Win, Labels.Player + Constants.OponentName + Labels.WonGame, Labels.Ok);
+                DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserId + Labels.WonGame, Labels.Ok);
                 Constants.OponentName = "";
                 Constants.HomeGoalCount = 0;
                 Constants.AwayGoalCount = 0;
-                Navigation.PushModalAsync(new PropertiesPage());
+                await Navigation.PopModalAsync();
             }
         }
 
-        public void AwayGoalProcedure(object e, EventArgs s)
+        public async void AwayGoalProcedure(object e, EventArgs s)
         {
             Constants.AwayGoalCount++;
             Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
 
             if (Constants.AwayGoalCount >= Constants.GoalLimit)
             {
-                DisplayAlert(Labels.Win, Constants.OponentName + Labels.WonGame, Labels.Ok);
+                DisplayAlert(Labels.Win, Labels.Player + Constants.OponentName + Labels.WonGame, Labels.Ok);
                 Constants.OponentName = "";
                 Constants.HomeGoalCount = 0;
                 Constants.AwayGoalCount = 0;
-                Navigation.PushModalAsync(new PropertiesPage());
+                await Navigation.PopModalAsync();
             }
+        }
 
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
         }
     }
 }
