@@ -1,4 +1,5 @@
 ﻿using Foosball_Lib.Models;
+using Foosball_Lib.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,18 @@ namespace Foosball_Lib.Views
 
         async public void StartMatchProcedure(object e, EventArgs s)
         {
-            await Navigation.PushModalAsync(new MatchPage());
+            if (!Validation.IsOpponentAssigned())
+            {
+                DisplayAlert("No opponent", "You haven't choosen your opponent", "Ok");
+            }
+            else if(!Validation.IsGoalLimitAssigned())
+            {
+                DisplayAlert("No Limit", "Goal Limit has not been assigned", "Ok");
+            }
+            else
+            {
+                await Navigation.PushModalAsync(new MatchPage());
+            }
         }
     }
 }

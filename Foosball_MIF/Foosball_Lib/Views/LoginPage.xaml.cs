@@ -18,8 +18,6 @@ namespace Foosball_Lib.Views
         {
             InitializeComponent();
             Init();
-
-           
         }
 
         void Init()
@@ -36,24 +34,16 @@ namespace Foosball_Lib.Views
 
         void SignInProcedure(object e, EventArgs s)
         {
-            Validation validation = new Validation();
-            if (validation.UsernamePatternMatch(Entry_Username.Text) && validation.PasswordPatternMatch(Entry_Password.Text))
+            if (Validation.UsernamePatternMatch(Entry_Username.Text) && Validation.PasswordPatternMatch(Entry_Password.Text))
             {
                 User user = new User(Entry_Username.Text, Entry_Password.Text);
                 Constants.LocalUser = user;
-                if (user.CheckInformation())
-                {
-                    DisplayAlert("Login", "Login succesful", "Ok");
-                    Navigation.PushModalAsync(new PropertiesPage());
-                }
-                else
-                {
-                    DisplayAlert("Login", "Login failed, empty password or username", "Ok");
-                }
+                DisplayAlert("Login", "Login succesful", "Ok");
+                Navigation.PushModalAsync(new PropertiesPage());
             }
             else
             {
-                DisplayAlert("Failed", "Password or username doesnt match pattern", "Ok");
+                DisplayAlert("Failed", "Password or username doesnt match pattern(or empty)", "Ok");
             }
 
         }

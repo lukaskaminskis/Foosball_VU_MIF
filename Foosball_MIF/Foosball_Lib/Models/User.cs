@@ -23,14 +23,6 @@ namespace Foosball_Lib.Models
             this.Password = Password;
         }
 
-        public bool CheckInformation()
-        {
-            if (this.UserId == null || this.Password == null || this.UserId == "" || this.Password == "")
-                return false;
-            else
-                return true;
-        }
-
         public void ChangeEmail(string Email)
         {
             this.Email = Email;

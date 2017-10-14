@@ -1,4 +1,5 @@
 ﻿using Foosball_Lib.Models;
+using Foosball_Lib.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,14 +30,14 @@ namespace Foosball_Lib.Views
 
         public void SubmitProcedure(object e, EventArgs s)
         {
-            if (Entry_OponentName.Text == null || Entry_OponentName.Text == "")
-            {
-                DisplayAlert("Empty Field", "Pleas eneter oponent name, field is empty", "Ok");
-            }
-            else
+            if (Validation.UsernamePatternMatch(Entry_OponentName.Text))
             {
                 Constants.OponentName = Entry_OponentName.Text;
                 Navigation.PushModalAsync(new PropertiesPage());
+            }
+            else
+            {
+                DisplayAlert("Failed", "Opponent name doesnt match pattern(or empty)", "Ok");
             }
         }
     }
