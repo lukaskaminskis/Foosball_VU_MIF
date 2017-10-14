@@ -60,5 +60,122 @@ namespace Foosball_Lib.Models {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed.
+        /// </summary>
+        internal static string Failed {
+            get {
+                return ResourceManager.GetString("Failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Goal Limit has not been assigned.
+        /// </summary>
+        internal static string GoalLimit {
+            get {
+                return ResourceManager.GetString("GoalLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login succesful.
+        /// </summary>
+        internal static string LoginSucc {
+            get {
+                return ResourceManager.GetString("LoginSucc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No Limit.
+        /// </summary>
+        internal static string NoLimit {
+            get {
+                return ResourceManager.GetString("NoLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password or username doesnt match pattern(or empty).
+        /// </summary>
+        internal static string NoMatch {
+            get {
+                return ResourceManager.GetString("NoMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No opponent.
+        /// </summary>
+        internal static string NoOp {
+            get {
+                return ResourceManager.GetString("NoOp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opponent name doesnt match pattern(or empty).
+        /// </summary>
+        internal static string OpNameNotMatch {
+            get {
+                return ResourceManager.GetString("OpNameNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You haven&apos;t choosen your opponent.
+        /// </summary>
+        internal static string OpNotChosen {
+            get {
+                return ResourceManager.GetString("OpNotChosen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player .
+        /// </summary>
+        internal static string Player {
+            get {
+                return ResourceManager.GetString("Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Win.
+        /// </summary>
+        internal static string Win {
+            get {
+                return ResourceManager.GetString("Win", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  won the game!.
+        /// </summary>
+        internal static string WonGame {
+            get {
+                return ResourceManager.GetString("WonGame", resourceCulture);
+            }
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace Foosball_Lib.Views
             }
             else
             {
-                DisplayAlert("Failed", "Opponent name doesnt match pattern(or empty)", "Ok");
+                DisplayAlert(Labels.Failed, Labels.OpNameNotMatch, Labels.Ok);
             }
         }
     }

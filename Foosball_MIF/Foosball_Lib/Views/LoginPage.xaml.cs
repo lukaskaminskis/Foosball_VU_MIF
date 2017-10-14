@@ -38,12 +38,12 @@ namespace Foosball_Lib.Views
             {
                 User user = new User(Entry_Username.Text, Entry_Password.Text);
                 Constants.LocalUser = user;
-                DisplayAlert("Login", "Login succesful", "Ok");
+                DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
                 Navigation.PushModalAsync(new PropertiesPage());
             }
             else
             {
-                DisplayAlert("Failed", "Password or username doesnt match pattern(or empty)", "Ok");
+                DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
             }
 
         }

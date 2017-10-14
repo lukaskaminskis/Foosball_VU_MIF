@@ -43,11 +43,11 @@ namespace Foosball_Lib.Views
         {
             if (!Validation.IsOpponentAssigned())
             {
-                DisplayAlert("No opponent", "You haven't choosen your opponent", "Ok");
+                DisplayAlert(Labels.NoOp, Labels.OpNotChosen, Labels.Ok);
             }
             else if(!Validation.IsGoalLimitAssigned())
             {
-                DisplayAlert("No Limit", "Goal Limit has not been assigned", "Ok");
+                DisplayAlert(Labels.NoLimit, Labels.GoalLimit, Labels.Ok);
             }
             else
             {
