@@ -36,7 +36,7 @@ namespace Foosball_Lib.Views
         {
             if (Validation.UsernamePatternMatch(Entry_Username.Text) && Validation.PasswordPatternMatch(Entry_Password.Text))
             {
-                User user = new User(Entry_Username.Text, Entry_Password.Text);
+                User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
                 Entry_Username.Text = "";
                 Entry_Password.Text = "";
                 Constants.LocalUser = user;
