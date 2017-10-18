@@ -62,9 +62,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FileManagement\UsersList.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Models\Labels.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
