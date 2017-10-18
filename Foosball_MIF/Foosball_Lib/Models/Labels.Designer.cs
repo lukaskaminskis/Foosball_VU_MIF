@@ -62,6 +62,15 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email doesn not match pattern , please repeat.
+        /// </summary>
+        internal static string EmailNotMatch {
+            get {
+                return ResourceManager.GetString("EmailNotMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Failed.
         /// </summary>
         internal static string Failed {
@@ -148,6 +157,15 @@ namespace Foosball_Lib.Models {
         internal static string OpNotChosen {
             get {
                 return ResourceManager.GetString("OpNotChosen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Passwords do not match, please repeat.
+        /// </summary>
+        internal static string PassNotMatch {
+            get {
+                return ResourceManager.GetString("PassNotMatch", resourceCulture);
             }
         }
         

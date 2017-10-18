@@ -1,11 +1,6 @@
 ﻿using Foosball_Lib.Models;
 using Foosball_Lib.Validations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,11 +17,11 @@ namespace Foosball_Lib.Views
 
         void Init()
         {
-            BackgroundColor = Constants.BackgroundColor;
-            Lbl_Username.TextColor = Constants.MainTextColor;
-            Lbl_Password.TextColor = Constants.MainTextColor;
-            ActivitySpinner.IsVisible = false;
-            LogoIcon.HeightRequest = Constants.LoginIconHeight;
+            BackgroundColor             = Constants.BackgroundColor;
+            Lbl_Username.TextColor      = Constants.MainTextColor;
+            Lbl_Password.TextColor      = Constants.MainTextColor;
+            ActivitySpinner.IsVisible   = false;
+            LogoIcon.HeightRequest      = Constants.LoginIconHeight;
 
             Entry_Username.Completed += (s, e) => Entry_Password.Focus();
             Entry_Password.Completed += (s, e) => SignInProcedure(s, e);
@@ -50,9 +45,9 @@ namespace Foosball_Lib.Views
 
         }
 
-        void RegisterProcedure()
+        void RegisterProcedure(object e, EventArgs s)
         {
-
+            Navigation.PushModalAsync(new RegistrationPage());
         }
 
     }

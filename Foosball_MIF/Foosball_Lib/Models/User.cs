@@ -17,10 +17,11 @@ namespace Foosball_Lib.Models
 
         public User(){}
 
-        public User(string UserId, string Password)
+        public User(string UserId, string Password, string Email = "")
         {
-            this.UserId = UserId;
-            this.Password = Password;
+            this.UserId     = UserId;
+            this.Password   = Password;
+            this.Email      = Email;
         }
 
         public void ChangeEmail(string Email)

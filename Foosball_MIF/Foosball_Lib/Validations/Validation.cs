@@ -1,10 +1,5 @@
 ﻿using Foosball_Lib.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Foosball_Lib.Validations
 {
@@ -56,6 +51,25 @@ namespace Foosball_Lib.Validations
             {
                 return true;
             }
+        }
+
+        public static bool EmailPatternMatch(string _email)
+        {
+            if (_email == "" || _email == null)
+            {
+                return false;
+            }
+
+            string EmailMatchPattern =
+                @"^(([\w-]+\.)+[\w-]+|([a-zA-Z]{1}|[\w-]{2,}))@"
+     + @"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
+				[0-9]{1,2}|25[0-5]|2[0-4][0-9])\."
+     + @"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\.([0-1]?
+				[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+     + @"([a-zA-Z0-9]+[\w-]+\.)+[a-zA-Z]{1}[a-zA-Z0-9-]{1,23})$";
+
+            Regex regex = new Regex(EmailMatchPattern);
+            return regex.IsMatch(_email);
         }
     }
 }

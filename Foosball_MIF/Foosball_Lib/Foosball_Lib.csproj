@@ -60,6 +60,9 @@
     <Compile Include="Views\PropertiesPage.xaml.cs">
       <DependentUpon>PropertiesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Models\Labels.resx">
@@ -114,6 +117,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\MatchPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\RegistrationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
