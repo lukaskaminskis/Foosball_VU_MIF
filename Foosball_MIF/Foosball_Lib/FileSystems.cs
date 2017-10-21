@@ -57,6 +57,5 @@ namespace Foosball_Lib
 			return content;
 		}
 
-
 	}
 }

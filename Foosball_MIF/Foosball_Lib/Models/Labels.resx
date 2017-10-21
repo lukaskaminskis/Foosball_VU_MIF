@@ -132,6 +132,9 @@
   <data name="LoginSucc" xml:space="preserve">
     <value>Login succesful</value>
   </data>
+  <data name="MatchHistory" xml:space="preserve">
+    <value>MatchHistory.txt</value>
+  </data>
   <data name="NoLimit" xml:space="preserve">
     <value>No Limit</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="Player" xml:space="preserve">
     <value>Player </value>
+  </data>
+  <data name="UsersList" xml:space="preserve">
+    <value>UsersList.txt</value>
   </data>
   <data name="Win" xml:space="preserve">
     <value>Win</value>

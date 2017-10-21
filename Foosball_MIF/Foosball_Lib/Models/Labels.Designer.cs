@@ -107,6 +107,15 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MatchHistory.txt.
+        /// </summary>
+        internal static string MatchHistory {
+            get {
+                return ResourceManager.GetString("MatchHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Limit.
         /// </summary>
         internal static string NoLimit {
@@ -175,6 +184,15 @@ namespace Foosball_Lib.Models {
         internal static string Player {
             get {
                 return ResourceManager.GetString("Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UsersList.txt.
+        /// </summary>
+        internal static string UsersList {
+            get {
+                return ResourceManager.GetString("UsersList", resourceCulture);
             }
         }
         

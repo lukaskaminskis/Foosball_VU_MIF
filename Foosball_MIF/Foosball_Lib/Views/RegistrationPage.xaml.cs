@@ -11,6 +11,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Foosball_Lib.Views
 {
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
@@ -49,7 +50,6 @@ namespace Foosball_Lib.Views
             else
             {
                 User user = new User(Entry_Username.Text, Entry_Password.Text, Entry_Email.Text);
-
             }
         }
     }

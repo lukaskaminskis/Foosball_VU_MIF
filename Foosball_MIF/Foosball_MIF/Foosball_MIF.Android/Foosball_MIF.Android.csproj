@@ -128,6 +128,9 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UsersList.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Foosball_Lib\Foosball_Lib.csproj">
       <Project>{a95b54c9-1701-4595-b098-1aba8e5f284f}</Project>
       <Name>Foosball_Lib</Name>
