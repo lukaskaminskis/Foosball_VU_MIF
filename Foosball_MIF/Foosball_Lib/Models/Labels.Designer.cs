@@ -188,6 +188,42 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Registration.
+        /// </summary>
+        internal static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration was succesful!.
+        /// </summary>
+        internal static string RegSucc {
+            get {
+                return ResourceManager.GetString("RegSucc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This user already exists!.
+        /// </summary>
+        internal static string UserExists {
+            get {
+                return ResourceManager.GetString("UserExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This user does not exist!.
+        /// </summary>
+        internal static string UserNotExists {
+            get {
+                return ResourceManager.GetString("UserNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UsersList.txt.
         /// </summary>
         internal static string UsersList {

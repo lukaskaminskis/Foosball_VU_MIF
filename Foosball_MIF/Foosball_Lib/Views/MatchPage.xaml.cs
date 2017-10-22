@@ -34,7 +34,7 @@ namespace Foosball_Lib.Views
             Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
             if (Constants.HomeGoalCount >= Constants.GoalLimit)
             {
-                DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserId + Labels.WonGame, Labels.Ok);
+                await DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserId + Labels.WonGame, Labels.Ok);
                 Constants.OponentName = "";
                 Constants.HomeGoalCount = 0;
                 Constants.AwayGoalCount = 0;
@@ -49,7 +49,7 @@ namespace Foosball_Lib.Views
 
             if (Constants.AwayGoalCount >= Constants.GoalLimit)
             {
-                DisplayAlert(Labels.Win, Labels.Player + Constants.OponentName + Labels.WonGame, Labels.Ok);
+               await  DisplayAlert(Labels.Win, Labels.Player + Constants.OponentName + Labels.WonGame, Labels.Ok);
                 Constants.OponentName = "";
                 Constants.HomeGoalCount = 0;
                 Constants.AwayGoalCount = 0;

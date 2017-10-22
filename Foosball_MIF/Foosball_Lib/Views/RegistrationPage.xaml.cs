@@ -1,4 +1,5 @@
-﻿using Foosball_Lib.Models;
+﻿using Foosball_Lib.FileManagement;
+using Foosball_Lib.Models;
 using Foosball_Lib.Validations;
 using System;
 using System.Collections.Generic;
@@ -36,17 +37,18 @@ namespace Foosball_Lib.Views
                 && !Validation.PasswordPatternMatch(Entry_Password.Text)
                 && !Validation.PasswordPatternMatch(Entry_RepeatPassword.Text))
             {
-               await DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
+                await DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
             }
             else if (Entry_Password.Text != Entry_RepeatPassword.Text)
             {
                 await DisplayAlert(Labels.Failed, Labels.PassNotMatch, Labels.Ok);
             }
-            //else if (Validation.EmailPatternMatch(Entry_Email.Text))
-            //{
-            //    await DisplayAlert(Labels.Failed, Labels.EmailNotMatch, Labels.Ok);
-            //}
-            else
+            else if (Validation.EmailPatternMatch(Entry_Email.Text))
+            {
+                await DisplayAlert(Labels.Failed, Labels.EmailNotMatch, Labels.Ok);
+            }
+
+            /*else
             {
                 User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
                 bool result = false;
@@ -77,6 +79,45 @@ namespace Foosball_Lib.Views
 
                 }
 
+            }*/
+            else
+            {
+                User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text, Email: Entry_Email.Text);
+                bool fileExists = await FileManagement.PCLHelper.IsFileExistAsync(Labels.UsersList);
+                if (!fileExists)
+                {
+                    //await FileManagement.PCLHelper.CreateFile(Labels.UsersList);
+                    string text = String.Format("{0};{1};{2}\n", user.UserId, user.GetPassword(), user.Email);
+                    await FileManagement.PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
+                    await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
+                }
+                else
+                {
+                    var users = new List<User>();
+                    string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
+                    FileProcedures file = new FileProcedures();
+                    users = file.UserList(text);
+
+                    var regUser = from selectUser in users
+                                    where selectUser.UserId == user.UserId
+                                    select selectUser;
+
+                    if (regUser == null)
+                    {
+                        text = text + String.Format("{0};{1};{2}\n", user.UserId, user.GetPassword(), user.Email);
+                        await FileManagement.PCLHelper.DeleteFile(Labels.UsersList);
+                        await FileManagement.PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
+
+                        Constants.LocalUser = user;
+                        await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
+                        await Navigation.PushModalAsync(new PropertiesPage());
+                    }
+                    else
+                    {
+                        await DisplayAlert(Labels.Failed, Labels.UserExists, Labels.Ok);
+                    }
+
+                }
             }
         }
         public string ContentBuilder(params string[] content)

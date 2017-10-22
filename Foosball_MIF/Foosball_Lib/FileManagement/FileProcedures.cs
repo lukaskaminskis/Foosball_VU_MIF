@@ -5,6 +5,7 @@ namespace Foosball_Lib.FileManagement
 {
     class FileProcedures
     {
+        public FileProcedures() { }
         /*public bool SignInProcedure(User user)
         {
 
@@ -15,9 +16,20 @@ namespace Foosball_Lib.FileManagement
             bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync("UsersList.txt");
         } */
 
-        public async Task<User> UsersList()
+        // a big bunch of text is turned into collection of users
+        public List<User> UserList(string text)
         {
-            string text = await FileManagement.PCLHelper.ReadAllTextAsync("UsersList.txt");
+            var users = new List<User>();
+            string[] allLines = text.Split('\n');
+
+            foreach (string line in allLines)
+            {
+                string[] split = line.Split(';');
+                User user = new User(split[0], split[1], split[2]);
+                users.Add(user);
+            }
+            return users;
         }
+
     }
 }

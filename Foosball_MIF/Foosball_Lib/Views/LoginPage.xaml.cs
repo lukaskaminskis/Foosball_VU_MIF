@@ -6,6 +6,9 @@ using Xamarin.Forms.Xaml;
 using PCLStorage;
 using Newtonsoft.Json;
 using System.Text;
+using System.Collections.Generic;
+using Foosball_Lib.FileManagement;
+using System.Linq;
 
 namespace Foosball_Lib.Views
 {
@@ -33,20 +36,45 @@ namespace Foosball_Lib.Views
         async void SignInProcedure(object e, EventArgs s)
         {
             User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
-            string txt = Entry_Username.Text + ".txt";
-            bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(txt);
+            //string txt = Entry_Username.Text + ".txt";
+            bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(Labels.UsersList);
             if (fileexist)
             {
-                Entry_Username.Text = "";
-                Entry_Password.Text = "";
-                txt = "";
-                Constants.LocalUser = user;
-                await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
-                await Navigation.PushModalAsync(new PropertiesPage());
+                //Entry_Username.Text = "";
+                //Entry_Password.Text = "";
+                //txt = ""; 
+                //Constants.LocalUser = user;
+                //await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
+                //await Navigation.PushModalAsync(new PropertiesPage());
+
+                string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
+                var users = new List<User>();
+                FileProcedures file = new FileProcedures();
+                users = file.UserList(text);
+
+                var LogUser = from selectUser in users
+                              where selectUser.UserId == user.UserId
+                              select selectUser;
+
+                if (LogUser != null)
+                {
+                    Constants.LocalUser = user;
+                    await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
+                    await Navigation.PushModalAsync(new PropertiesPage());
+                }
+                else
+                {
+                    await DisplayAlert(Labels.Failed, Labels.UserNotExists, Labels.Ok);
+                }
+
+
+
             }
             else 
             {
-                await DisplayAlert("Login", "You are not registered yet.  ", "OK");
+                //await DisplayAlert("Login", "You are not registered yet.  ", "OK");
+                //await FileManagement.PCLHelper.CreateFile(Labels.UsersList);
+                await DisplayAlert("Fail", "There are no users in database, failed to login", "Ok");
             }
         }
 

@@ -159,6 +159,18 @@
   <data name="Player" xml:space="preserve">
     <value>Player </value>
   </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="RegSucc" xml:space="preserve">
+    <value>Registration was succesful!</value>
+  </data>
+  <data name="UserExists" xml:space="preserve">
+    <value>This user already exists!</value>
+  </data>
+  <data name="UserNotExists" xml:space="preserve">
+    <value>This user does not exist!</value>
+  </data>
   <data name="UsersList" xml:space="preserve">
     <value>UsersList.txt</value>
   </data>
