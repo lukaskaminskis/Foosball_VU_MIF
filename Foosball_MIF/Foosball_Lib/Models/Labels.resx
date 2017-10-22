@@ -169,7 +169,7 @@
     <value>This user already exists!</value>
   </data>
   <data name="UserNotExists" xml:space="preserve">
-    <value>This user does not exist!</value>
+    <value>This user does not exist or wrong password</value>
   </data>
   <data name="UsersList" xml:space="preserve">
     <value>UsersList.txt</value>

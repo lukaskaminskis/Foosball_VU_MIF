@@ -215,7 +215,7 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This user does not exist!.
+        ///   Looks up a localized string similar to This user does not exist or wrong password.
         /// </summary>
         internal static string UserNotExists {
             get {

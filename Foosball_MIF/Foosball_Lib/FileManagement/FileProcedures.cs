@@ -1,4 +1,5 @@
 ﻿using Foosball_Lib.Models;
+using System;
 using System.Collections.Generic;
 
 namespace Foosball_Lib.FileManagement
@@ -20,12 +21,13 @@ namespace Foosball_Lib.FileManagement
         public List<User> UserList(string text)
         {
             var users = new List<User>();
-            string[] allLines = text.Split('\n');
+            string[] allLines = text.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string line in allLines)
             {
-                string[] split = line.Split(';');
-                User user = new User(split[0], split[1], split[2]);
+                string[] split;
+                split = line.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                User user = new User(split[0], split[1], split[2] ?? "NoEmail");
                 users.Add(user);
             }
             return users;
