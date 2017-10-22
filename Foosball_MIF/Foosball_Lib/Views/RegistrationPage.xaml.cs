@@ -50,7 +50,7 @@ namespace Foosball_Lib.Views
             {
                 User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
                 bool result = false;
-                string txt = Entry_Username + ".txt";
+                string txt = Entry_Username.Text + ".txt";
                 bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(txt);
                 if (fileexist != true)
                 {
@@ -59,11 +59,11 @@ namespace Foosball_Lib.Views
 
                     if (!result)
                     {
-                        await DisplayAlert("Registrtion", "Registrtion Fail .. Please try again ", "OK");
+                        await DisplayAlert("Registration", "Registrtion Fail .. Please try again ", "OK");
                     }
                     else
                     {
-                        await DisplayAlert("Registrtion", "Registrtion Success ... ", "OK");
+                        await DisplayAlert("Registration", "Registrtion Success ... ", "OK");
                         Constants.LocalUser = user;
                         await Navigation.PushModalAsync(new PropertiesPage());
                     }

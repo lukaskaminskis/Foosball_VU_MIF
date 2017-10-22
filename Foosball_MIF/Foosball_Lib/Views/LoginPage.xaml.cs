@@ -32,26 +32,8 @@ namespace Foosball_Lib.Views
 
         async void SignInProcedure(object e, EventArgs s)
         {
-            
-            //converting to json
-            //string json = JsonConvert.SerializeObject(user);
             User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
             string txt = Entry_Username.Text + ".txt";
-
-            //WRITING TO FILE
-            //// Access the file system for the current platform.
-            //IFileSystem fileSystem = FileSystem.Current;
-
-            //// Get the root directory of the file system for our application.
-            //IFolder rootFolder = fileSystem.LocalStorage;
-
-
-            //IFolder folder = await rootFolder.CreateFolderAsync("Users",
-            //    CreationCollisionOption.OpenIfExists);
-            //IFile file = await folder.CreateFileAsync(txt,
-                //CreationCollisionOption.ReplaceExisting);
-            
-           
             bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(txt);
             if (fileexist)
             {
@@ -66,11 +48,6 @@ namespace Foosball_Lib.Views
             {
                 await DisplayAlert("Login", "You are not registered yet.  ", "OK");
             }
-          
-     
-                   
-            
-
         }
 
         void RegisterProcedure(object e, EventArgs s)
