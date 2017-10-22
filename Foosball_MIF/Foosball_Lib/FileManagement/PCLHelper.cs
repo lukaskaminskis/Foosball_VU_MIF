@@ -7,7 +7,7 @@ namespace Foosball_Lib.FileManagement
     public static class PCLHelper
     {
 
-        public async static Task<bool> IsFileExistAsync(this string fileName, IFolder rootFolder = null)
+        public async static Task<bool> IsFileExistAsync(string fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
@@ -22,7 +22,7 @@ namespace Foosball_Lib.FileManagement
             return false;
         }
 
-        public async static Task<bool> IsFolderExistAsync(this string folderName, IFolder rootFolder = null)
+        public async static Task<bool> IsFolderExistAsync(string folderName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
@@ -37,7 +37,7 @@ namespace Foosball_Lib.FileManagement
             return false;
         }
 
-        public async static Task<IFolder> CreateFolder(this string folderName, IFolder rootFolder = null)
+        public async static Task<IFolder> CreateFolder(string folderName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
@@ -46,7 +46,7 @@ namespace Foosball_Lib.FileManagement
             return folder;
         }
 
-        public async static Task<IFile> CreateFile(this string filename, IFolder rootFolder = null)
+        public async static Task<IFile> CreateFile(string filename, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
@@ -54,20 +54,20 @@ namespace Foosball_Lib.FileManagement
             IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
             return file;
         }
-        public async static Task<bool> WriteTextAllAsync(this string filename, string content = "", IFolder rootFolder = null)
+        public async static Task<bool> WriteTextAllAsync(string filename, string content = "", IFolder rootFolder = null)
         {
-            IFile file = await filename.CreateFile(rootFolder);
+            IFile file = await CreateFile(filename,rootFolder);
             await file.WriteAllTextAsync(content);
             return true;
         }
 
-        public async static Task<string> ReadAllTextAsync(this string fileName, IFolder rootFolder = null)
+        public async static Task<string> ReadAllTextAsync(string fileName, IFolder rootFolder = null)
         {
             string content = "";
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
-            bool exist = await fileName.IsFileExistAsync(folder);
+            bool exist = await IsFileExistAsync(fileName, folder);
             if (exist == true)
             {
                 IFile file = await folder.GetFileAsync(fileName);
@@ -75,12 +75,12 @@ namespace Foosball_Lib.FileManagement
             }
             return content;
         }
-        public async static Task<bool> DeleteFile(this string fileName, IFolder rootFolder = null)
+        public async static Task<bool> DeleteFile(string fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
-            bool exist = await fileName.IsFileExistAsync(folder);
+            bool exist = await IsFileExistAsync(fileName,folder);
             if (exist == true)
             {
                 IFile file = await folder.GetFileAsync(fileName);
@@ -89,7 +89,7 @@ namespace Foosball_Lib.FileManagement
             }
             return false;
         }
-        public async static Task SaveImage(this byte[] image, String fileName, IFolder rootFolder = null)
+        public async static Task SaveImage(byte[] image, String fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
@@ -104,9 +104,8 @@ namespace Foosball_Lib.FileManagement
             }
         }
 
-        public async static Task<byte[]> LoadImage(this byte[] image, String fileName, IFolder rootFolder = null)
+        public async static Task<byte[]> LoadImage(byte[] image, String fileName, IFolder rootFolder = null)
         {
-            // get hold of the file system  
             IFileSystem fileSystem = FileSystem.Current;
             // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;

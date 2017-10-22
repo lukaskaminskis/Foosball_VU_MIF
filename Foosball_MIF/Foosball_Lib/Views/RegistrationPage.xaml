@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Foosball_Lib.Views.RegistrationPage"
@@ -20,8 +20,8 @@
                 <Entry x:Name="Entry_Password" Placeholder="Password" IsPassword="True"/>
                 <Label x:Name="Lbl_RepeatPassword" Text="Repeat Passsword" />
                 <Entry x:Name="Entry_RepeatPassword" Placeholder="Password" IsPassword="True" />
-                <Label x:Name="Lbl_Email" Text="Email" />
-                <Entry x:Name="Entry_Email" Placeholder="Email" Keyboard="Email" />
+               <!-- <Label x:Name="Lbl_Email" Text="Email" />
+                <Entry x:Name="Entry_Email" Placeholder="Email" Keyboard="Email" />-->
                 <Button x:Name="Btn_Register" Text="Register" Clicked="RegisterProcedure"/>
 
             </StackLayout>

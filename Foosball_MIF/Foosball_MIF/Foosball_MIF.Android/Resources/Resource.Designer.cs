@@ -42,6 +42,8 @@ namespace Foosball_MIF.Droid
 			global::C1.Android.Core.Resource.Id.normal = global::Foosball_MIF.Droid.Resource.Id.normal;
 			global::C1.Android.Core.Resource.Id.sans = global::Foosball_MIF.Droid.Resource.Id.sans;
 			global::C1.Android.Core.Resource.Id.serif = global::Foosball_MIF.Droid.Resource.Id.serif;
+			global::PCLStorage.Resource.String.ApplicationName = global::Foosball_MIF.Droid.Resource.String.ApplicationName;
+			global::PCLStorage.Resource.String.Hello = global::Foosball_MIF.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Foosball_MIF.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -3000,6 +3002,12 @@ namespace Foosball_MIF.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f080027
+			public const int ApplicationName = 2131230759;
+			
+			// aapt resource value: 0x7f080026
+			public const int Hello = 2131230758;
 			
 			// aapt resource value: 0x7f08000f
 			public const int abc_action_bar_home_description = 2131230735;

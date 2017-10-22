@@ -3,6 +3,9 @@ using Foosball_Lib.Validations;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PCLStorage;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace Foosball_Lib.Views
 {
@@ -27,27 +30,40 @@ namespace Foosball_Lib.Views
             Entry_Password.Completed += (s, e) => SignInProcedure(s, e);
         }
 
-        void SignInProcedure(object e, EventArgs s)
+        async void SignInProcedure(object e, EventArgs s)
         {
-            if (Validation.UsernamePatternMatch(Entry_Username.Text) && Validation.PasswordPatternMatch(Entry_Password.Text))
+            User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
+            string txt = Entry_Username.Text + ".txt";
+            bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(txt);
+            if (fileexist)
             {
-                User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
                 Entry_Username.Text = "";
                 Entry_Password.Text = "";
+                txt = "";
                 Constants.LocalUser = user;
-                DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
-                Navigation.PushModalAsync(new PropertiesPage());
+                await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
+                await Navigation.PushModalAsync(new PropertiesPage());
             }
-            else
+            else 
             {
-                DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
+                await DisplayAlert("Login", "You are not registered yet.  ", "OK");
             }
-
         }
 
         void RegisterProcedure(object e, EventArgs s)
         {
             Navigation.PushModalAsync(new RegistrationPage());
+
+        }
+
+        public string ContentBuilder(params string[] content)
+        {
+            StringBuilder contentbuilder = new StringBuilder();
+            foreach (var item in content)
+            {
+                contentbuilder.AppendLine(item.ToString());
+            }
+            return contentbuilder.ToString();
         }
 
     }
