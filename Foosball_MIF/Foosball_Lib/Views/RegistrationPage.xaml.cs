@@ -29,6 +29,10 @@ namespace Foosball_Lib.Views
             Lbl_RepeatPassword.TextColor    = Constants.MainTextColor;
             ActivitySpinner.IsVisible       = false;
             LogoIcon.HeightRequest          = Constants.LoginIconHeight;
+
+            Entry_Username.Completed += (s, e) => Entry_Password.Focus();
+            Entry_Password.Completed += (s, e) => Entry_RepeatPassword.Focus();
+            Entry_RepeatPassword.Completed += (s, e) => Entry_Email.Focus();
         }
 
         async void RegisterProcedure(object e, EventArgs s)
@@ -45,10 +49,10 @@ namespace Foosball_Lib.Views
                 {
                     await DisplayAlert(Labels.Failed, Labels.PassNotMatch, Labels.Ok);
                 }
-                //else if (Validation.EmailPatternMatch(Entry_Email.Text))
-                //{
-                //    await DisplayAlert(Labels.Failed, Labels.EmailNotMatch, Labels.Ok);
-                //}
+                else if (Validation.EmailPatternMatch(Entry_Email.Text))
+                {
+                    await DisplayAlert(Labels.Failed, Labels.EmailNotMatch, Labels.Ok);
+                }
                 else
                 {
                     User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text, Email: Entry_Email.Text);
@@ -98,7 +102,7 @@ namespace Foosball_Lib.Views
             }  
             
         }
-        public string ContentBuilder(params string[] content)
+        /*public string ContentBuilder(params string[] content)
         {
             StringBuilder contentbuilder = new StringBuilder();
             foreach (var item in content)
@@ -106,7 +110,7 @@ namespace Foosball_Lib.Views
                 contentbuilder.AppendLine(item.ToString());
             }
             return contentbuilder.ToString();
-        }
+        } */
     }
             /*else
             {
