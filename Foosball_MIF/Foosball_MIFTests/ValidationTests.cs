@@ -52,18 +52,21 @@ namespace Foosball_MIFTests
             string string4 = "jonas@.com";
             string string5 = "";
             string string6 = "jonas.com";
+            string string7 = "jonas.kazlauskas@mif.stud.vu.lt";
             bool returned1;
             bool returned2;
             bool returned3;
             bool returned4;
             bool returned5;
             bool returned6;
+            bool returned7;
             bool expected1 = false;
             bool expected2 = true;
             bool expected3 = false;
             bool expected4 = false;
             bool expected5 = false;
             bool expected6 = false;
+            bool expected7 = true;
 
             //act
             returned1 = Validation.EmailPatternMatch(string1);
@@ -72,6 +75,7 @@ namespace Foosball_MIFTests
             returned4 = Validation.EmailPatternMatch(string4);
             returned5 = Validation.EmailPatternMatch(string5);
             returned6 = Validation.EmailPatternMatch(string6);
+            returned7 = Validation.EmailPatternMatch(string7);
 
             //assert
             Assert.AreEqual(returned1, expected1);
@@ -80,6 +84,8 @@ namespace Foosball_MIFTests
             Assert.AreEqual(returned4, expected4);
             Assert.AreEqual(returned5, expected5);
             Assert.AreEqual(returned6, expected6);
+            Assert.AreEqual(returned7, expected7);
+
         }
     }
 }
