@@ -31,7 +31,7 @@ namespace Foosball_Lib.Views
         {
             if (Checkgoallimit(Entry_GoalLimit.Text))
             {
-                DisplayAlert("Entry error", "Please enter valid goal limit", "Ok");
+                await DisplayAlert("Entry error", "Please enter valid goal limit", "Ok");
             }
             else
             {
