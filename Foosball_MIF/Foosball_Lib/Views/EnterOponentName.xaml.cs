@@ -38,7 +38,7 @@ namespace Foosball_Lib.Views
             }
             else
             {
-                DisplayAlert(Labels.Failed, Labels.OpNameNotMatch, Labels.Ok);
+                await DisplayAlert(Labels.Failed, Labels.OpNameNotMatch, Labels.Ok);
             }
         }
 

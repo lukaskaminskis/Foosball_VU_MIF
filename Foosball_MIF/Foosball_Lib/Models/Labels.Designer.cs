@@ -107,6 +107,15 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to MatchHistory.txt.
+        /// </summary>
+        internal static string MatchHistory {
+            get {
+                return ResourceManager.GetString("MatchHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Limit.
         /// </summary>
         internal static string NoLimit {
@@ -175,6 +184,51 @@ namespace Foosball_Lib.Models {
         internal static string Player {
             get {
                 return ResourceManager.GetString("Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration.
+        /// </summary>
+        internal static string Registration {
+            get {
+                return ResourceManager.GetString("Registration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registration was succesful!.
+        /// </summary>
+        internal static string RegSucc {
+            get {
+                return ResourceManager.GetString("RegSucc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This user already exists!.
+        /// </summary>
+        internal static string UserExists {
+            get {
+                return ResourceManager.GetString("UserExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This user does not exist or wrong password.
+        /// </summary>
+        internal static string UserNotExists {
+            get {
+                return ResourceManager.GetString("UserNotExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UsersList.txt.
+        /// </summary>
+        internal static string UsersList {
+            get {
+                return ResourceManager.GetString("UsersList", resourceCulture);
             }
         }
         
