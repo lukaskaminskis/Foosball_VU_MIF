@@ -36,11 +36,11 @@ namespace Foosball_MIFTests
             returned5 = Validation.UsernamePatternMatch(string5);
 
             //assert
-            Assert.AreEqual(returned1, expected1);
-            Assert.AreEqual(returned2, expected2);
-            Assert.AreEqual(returned3, expected3);
-            Assert.AreEqual(returned4, expected4);
-            Assert.AreEqual(returned5, expected5);
+            Assert.AreEqual(expected1, returned1);
+            Assert.AreEqual(expected2, returned2);
+            Assert.AreEqual(expected3, returned3);
+            Assert.AreEqual(expected4, returned4);
+            Assert.AreEqual(expected5, returned5);
         }
         [TestMethod]
         public void EmailPatternMatchTest()
@@ -78,13 +78,13 @@ namespace Foosball_MIFTests
             returned7 = Validation.EmailPatternMatch(string7);
 
             //assert
-            Assert.AreEqual(returned1, expected1);
-            Assert.AreEqual(returned2, expected2);
-            Assert.AreEqual(returned3, expected3);
-            Assert.AreEqual(returned4, expected4);
-            Assert.AreEqual(returned5, expected5);
-            Assert.AreEqual(returned6, expected6);
-            Assert.AreEqual(returned7, expected7);
+            Assert.AreEqual(expected1, returned1);
+            Assert.AreEqual(expected2, returned2);
+            Assert.AreEqual(expected3, returned3);
+            Assert.AreEqual(expected4, returned4);
+            Assert.AreEqual(expected5, returned5);
+            Assert.AreEqual(expected6, returned6);
+            Assert.AreEqual(expected7, returned7);
 
         }
     }
