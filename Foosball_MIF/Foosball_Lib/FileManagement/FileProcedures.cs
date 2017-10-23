@@ -7,15 +7,6 @@ namespace Foosball_Lib.FileManagement
     class FileProcedures
     {
         public FileProcedures() { }
-        /*public bool SignInProcedure(User user)
-        {
-
-        }
-
-        public async bool RegisterProcedure(User user)
-        {
-            bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync("UsersList.txt");
-        } */
 
         // a big bunch of text is turned into collection of users
         public List<User> UserList(string text)

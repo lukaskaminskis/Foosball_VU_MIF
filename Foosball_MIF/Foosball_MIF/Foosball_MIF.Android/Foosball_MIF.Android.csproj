@@ -123,7 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Drawable\Icon.png" />
-    <AndroidResource Include="Resources\Drawable\background.jpg" />
+    <AndroidResource Include="Resources\Drawable\background2.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
@@ -141,6 +141,9 @@
       <Project>{a95b54c9-1701-4595-b098-1aba8e5f284f}</Project>
       <Name>Foosball_Lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Drawable\background.jpg" />
   </ItemGroup>
   <Import Project="..\Foosball_MIF\Foosball_MIF.projitems" Label="Shared" Condition="Exists('..\Foosball_MIF\Foosball_MIF.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
