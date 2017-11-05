@@ -1,9 +1,5 @@
 ﻿using Foosball_Lib.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -36,7 +32,6 @@ namespace Foosball_Lib.Views
             else
             {
                 Constants.GoalLimit = Int32.Parse(Entry_GoalLimit.Text);
-                //Navigation.PushModalAsync(new PropertiesPage());
                 await Navigation.PopModalAsync();
             }
         }

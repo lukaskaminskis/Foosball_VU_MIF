@@ -43,7 +43,7 @@ namespace Foosball_Lib.Validations
 
         public static bool IsGoalLimitAssigned()
         {
-            if (Constants.GoalLimit == 0 || Constants.GoalLimit == null)
+            if (Constants.GoalLimit == 0)
             {
                 return false;
             }

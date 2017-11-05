@@ -1,10 +1,6 @@
 ﻿using Foosball_Lib.Models;
 using Foosball_Lib.Validations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -33,7 +29,6 @@ namespace Foosball_Lib.Views
             if (Validation.UsernamePatternMatch(Entry_OponentName.Text))
             {
                 Constants.OponentName = Entry_OponentName.Text;
-                //Navigation.PushModalAsync(new PropertiesPage());
                 await Navigation.PopModalAsync();
             }
             else

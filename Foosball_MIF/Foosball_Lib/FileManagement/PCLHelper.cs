@@ -17,7 +17,6 @@ namespace Foosball_Lib.FileManagement
             if (folderexist == ExistenceCheckResult.FileExists)
             {
                 return true;
-
             }
             return false;
         }
@@ -25,10 +24,8 @@ namespace Foosball_Lib.FileManagement
         public async static Task<bool> IsFolderExistAsync(string folderName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             ExistenceCheckResult folderexist = await folder.CheckExistsAsync(folderName);
-            // already run at least once, don't overwrite what's there  
             if (folderexist == ExistenceCheckResult.FolderExists)
             {
                 return true;
@@ -40,7 +37,6 @@ namespace Foosball_Lib.FileManagement
         public async static Task<IFolder> CreateFolder(string folderName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             folder = await folder.CreateFolderAsync(folderName, CreationCollisionOption.ReplaceExisting);
             return folder;
@@ -49,7 +45,6 @@ namespace Foosball_Lib.FileManagement
         public async static Task<IFile> CreateFile(string filename, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             IFile file = await folder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
             return file;
@@ -65,7 +60,6 @@ namespace Foosball_Lib.FileManagement
         {
             string content = "";
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             bool exist = await IsFileExistAsync(fileName, folder);
             if (exist == true)
@@ -78,7 +72,6 @@ namespace Foosball_Lib.FileManagement
         public async static Task<bool> DeleteFile(string fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             bool exist = await IsFileExistAsync(fileName,folder);
             if (exist == true)
@@ -92,7 +85,6 @@ namespace Foosball_Lib.FileManagement
         public async static Task SaveImage(byte[] image, String fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
             // create a file, overwriting any existing file  
             IFile file = await folder.CreateFileAsync(fileName, CreationCollisionOption.ReplaceExisting);
@@ -107,7 +99,6 @@ namespace Foosball_Lib.FileManagement
         public async static Task<byte[]> LoadImage(byte[] image, String fileName, IFolder rootFolder = null)
         {
             IFileSystem fileSystem = FileSystem.Current;
-            // get hold of the file system  
             IFolder folder = rootFolder ?? fileSystem.LocalStorage;
 
             //open file if exists  

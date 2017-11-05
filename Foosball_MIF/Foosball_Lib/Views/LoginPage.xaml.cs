@@ -1,10 +1,7 @@
 ﻿using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PCLStorage;
-using Newtonsoft.Json;
 using System.Text;
 using System.Collections.Generic;
 using Foosball_Lib.FileManagement;
@@ -19,7 +16,6 @@ namespace Foosball_Lib.Views
         {
             InitializeComponent();
             Init();
-
         }
 
         void Init()
@@ -30,28 +26,17 @@ namespace Foosball_Lib.Views
             ActivitySpinner.IsVisible   = false;
             LogoIcon.HeightRequest      = Constants.LoginIconHeight;
 
-            Entry_Username.Completed += (s, e) => Entry_Password.Focus();
-            //Entry_Password.Completed += (s, e) => SignInProcedure(s, e); 
+            Entry_Username.Completed += (s, e) => Entry_Password.Focus(); 
         }
 
         async void SignInProcedure(object e, EventArgs s)
         {
             try
             {
-
-                //await FileManagement.PCLHelper.DeleteFile(Labels.UsersList);
                 User user = new User(UserId: Entry_Username.Text, Password: Entry_Password.Text);
-                //string txt = Entry_Username.Text + ".txt";
-                bool fileexist = await FileManagement.PCLHelper.IsFileExistAsync(Labels.UsersList);
-                if (fileexist)
+                bool fileExist = await FileManagement.PCLHelper.IsFileExistAsync(Labels.UsersList);
+                if (fileExist)
                 {
-                    //Entry_Username.Text = "";
-                    //Entry_Password.Text = "";
-                    //txt = ""; 
-                    //Constants.LocalUser = user;
-                    //await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
-                    //await Navigation.PushModalAsync(new PropertiesPage());
-
                     string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
                     var users = new List<User>();
                     FileProcedures file = new FileProcedures();
@@ -72,20 +57,15 @@ namespace Foosball_Lib.Views
                     {
                         await DisplayAlert(Labels.Failed, Labels.UserNotExists, Labels.Ok);
                     }
-
-
-
                 }
                 else
                 {
-                    //await DisplayAlert("Login", "You are not registered yet.  ", "OK");
-                    //await FileManagement.PCLHelper.CreateFile(Labels.UsersList);
                     await DisplayAlert("Fail", "There are no users in database, failed to login", "Ok");
                 }
             }
             catch (Exception exc)
             {
-                DisplayAlert("Exc", exc.ToString(), "ok");
+                await DisplayAlert("Exc", exc.ToString(), "ok");
             }
 
         }
