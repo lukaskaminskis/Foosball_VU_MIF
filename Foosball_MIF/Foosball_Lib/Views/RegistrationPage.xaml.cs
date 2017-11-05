@@ -1,14 +1,10 @@
 ﻿using Foosball_Lib.FileManagement;
 using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Foosball_Lib.FileManagement.RegistrationBackEnd;
 
 namespace Foosball_Lib.Views
 {
@@ -37,7 +33,32 @@ namespace Foosball_Lib.Views
 
         async void RegisterProcedure(object e, EventArgs s)
         {
-            try
+            RegistrationBackEnd backEnd = new RegistrationBackEnd();
+
+            switch (await backEnd.BackEndAsync(Entry_Username.Text, Entry_Password.Text, Entry_RepeatPassword.Text, Entry_Email.Text))
+            {
+                case Message.RegexNoMatch:
+                    await DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
+                    break;
+                case Message.PassNoMatch:
+                    await DisplayAlert(Labels.Failed, Labels.PassNotMatch, Labels.Ok);
+                    break;
+                case Message.EmailNotMatch:
+                    await DisplayAlert(Labels.Failed, Labels.EmailNotMatch, Labels.Ok);
+                    break;
+                case Message.RegSucc:
+                    await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
+                    await Navigation.PushModalAsync(new PropertiesPage());
+                    break;
+                case Message.UserExists:
+                    await DisplayAlert(Labels.Failed, Labels.UserExists, Labels.Ok);
+                    break;
+                case Message.Exc:
+                    await DisplayAlert(Labels.Exc, Labels.Exception, Labels.Ok);
+                    break;
+            }
+                    
+            /*try
             {
                 if (!Validation.UsernamePatternMatch(Entry_Username.Text)
                     && !Validation.PasswordPatternMatch(Entry_Password.Text)
@@ -99,7 +120,8 @@ namespace Foosball_Lib.Views
             catch (Exception exc)
             {
                 await DisplayAlert("Exception", exc.ToString(), "Ok");
-            }  
+            }
+            */
             
         }
         /*public string ContentBuilder(params string[] content)
