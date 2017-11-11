@@ -49,9 +49,11 @@
     <Compile Include="Views\EnterOponentName.xaml.cs">
       <DependentUpon>EnterOponentName.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EnterOponentNameViewModel.cs" />
     <Compile Include="Views\GoalLimit.xaml.cs">
       <DependentUpon>GoalLimit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ImprovedListView.cs" />
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>

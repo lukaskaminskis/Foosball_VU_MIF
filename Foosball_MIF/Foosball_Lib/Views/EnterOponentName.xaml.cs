@@ -16,10 +16,11 @@ namespace Foosball_Lib.Views
         public EnterOponentName()
         {
             InitializeComponent();
-            Init();
+            BindingContext = new EnterOponentNameViewModel();
+            //Init();
         }
 
-        public async void Init()
+       /* public async void Init()
         {
             OpponentView.IsPullToRefreshEnabled = true;
             var users = new List<User>();
@@ -38,7 +39,7 @@ namespace Foosball_Lib.Views
             //Lbl_OponentName.TextColor = Constants.MainTextColor;
             //LogoIcon.HeightRequest = Constants.LoginIconHeight;
             //Entry_OponentName.Text = Constants.OponentName;
-        }
+        } */
 
         //public async void SubmitProcedure(object e, EventArgs s)
         //{
@@ -53,9 +54,26 @@ namespace Foosball_Lib.Views
         //    }
         //}
 
-        protected override bool OnBackButtonPressed()
+        /*protected override bool OnBackButtonPressed()
         {
             return true;
+        }*/
+
+        void DoStuff(object e, EventArgs s)
+        {
+            DisplayAlert("Alert", "You pressed" + e.ToString(), "ok");
+        }
+
+        public void OnMore(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("More Context Action", mi.CommandParameter + "more context action", "Ok");
+        }
+
+        public void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            DisplayAlert("More Context Action", mi.CommandParameter + "more context action", "Ok");
         }
     }
 }

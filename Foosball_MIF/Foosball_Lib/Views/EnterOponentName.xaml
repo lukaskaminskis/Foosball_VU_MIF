@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Foosball_Lib.Views"
              x:Class="Foosball_Lib.Views.EnterOponentName"
              BackgroundImage="background.jpg"
              Title="Oponent name">
@@ -17,7 +18,8 @@
                 <Button x:Name="Btn_Submit" Text="Submit" Clicked="SubmitProcedure" />
             </StackLayout>
         </StackLayout> -->
-        <Grid>
+        
+        <!--<Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
@@ -25,19 +27,33 @@
             <ListView x:Name="OpponentView" Grid.Row="0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Clicked="StartMatchProcedure" Text="Start Match"/>
-                            </ViewCell.ContextActions>
-                        </ViewCell>
                         <TextCell Text="{Binding UserId}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <StackLayout Orientation="Horizontal" Grid.Row="1">
-                <Button Text="Start Match" HorizontalOptions="FillAndExpand" Clicked="StartMatchProcedure" />
-                <Button Text="Statistics" HorizontalOptions="FillAndExpand" Clicked="StatisticsProcedure" />
-            </StackLayout>
-        </Grid>
+        </Grid>-->
+
+        <StackLayout>
+            <Label Text="{Binding AlertMessage}" TextColor="Cyan"/>
+            <local:ImprovedListView ItemsSource="{Binding UserId}" ItemClickedCommand="{Binding ItemClickedCommand}"/>
+        </StackLayout>
+        <!--<ListView x:Name="OpponetnView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Clicked="OnMore" CommandParameter="{Binding .}"
+                                Text="More" />
+                            <MenuItem Clicked="OnDelete" CommandParameter="{Binding .}"
+                                Text="Delete" IsDestructive="True" />
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="15,0">
+                            <Label Text="{Binding UserId}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView> -->
+        
     </ContentPage.Content>
 </ContentPage>

@@ -13,7 +13,6 @@
             <StackLayout x:Name="ResgistrationEntryStack" VerticalOptions="StartAndExpand" Margin="50,50,50,50">
 
                 <ActivityIndicator x:Name="ActivitySpinner" Color="Red" IsRunning="true" />
-
                 <Label x:Name="Lbl_Username" Text="Username" />
                 <Entry x:Name="Entry_Username" Placeholder="Username"/>
                 <Label x:Name="Lbl_Password" Text="Password" />
@@ -23,7 +22,6 @@
                 <Label x:Name="Lbl_Email" Text="Email" />
                 <Entry x:Name="Entry_Email" Placeholder="Email" Keyboard="Email" />
                 <Button x:Name="Btn_Register" Text="Register" Clicked="RegisterProcedure"/>
-
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

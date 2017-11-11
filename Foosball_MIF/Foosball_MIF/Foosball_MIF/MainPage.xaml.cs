@@ -11,7 +11,7 @@ namespace Foosball_MIF
 	{
 		public MainPage()
 		{
-			InitializeComponent();
+			//InitializeComponent();
 		}
 	}
 }
