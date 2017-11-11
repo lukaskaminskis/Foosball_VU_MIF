@@ -35,7 +35,7 @@
 
         <StackLayout>
             <Label Text="{Binding AlertMessage}" TextColor="Cyan"/>
-            <local:ImprovedListView ItemsSource="{Binding UserId}" ItemClickedCommand="{Binding ItemClickedCommand}"/>
+            <local:ImprovedListView ItemsSource="{Binding UsersId}" ItemClickedCommand="{Binding ItemClickedCommand}"/>
         </StackLayout>
         <!--<ListView x:Name="OpponetnView">
             <ListView.ItemTemplate>

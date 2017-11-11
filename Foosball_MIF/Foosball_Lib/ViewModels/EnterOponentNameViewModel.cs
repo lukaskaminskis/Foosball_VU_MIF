@@ -1,7 +1,10 @@
-﻿using Foosball_Lib.Models;
+﻿using Foosball_Lib.FileManagement;
+using Foosball_Lib.Models;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System;
 
 namespace Foosball_Lib.Views
 {
@@ -23,12 +26,7 @@ namespace Foosball_Lib.Views
 
         public EnterOponentNameViewModel()
         {
-            UsersId = new ObservableCollection<string>
-            {
-                "First user",
-                "Second User",
-                "Third User",
-            };
+            Init();
         }
 
         private string _alertMessage;
@@ -53,6 +51,21 @@ namespace Foosball_Lib.Views
                 {
                     AlertMessage = item as string;
                 });
+            }
+        }
+
+        async void Init()
+        {
+            UsersId = new ObservableCollection<string>();
+            var users = new List<User>();
+            BackEnd backEndOpponent = new BackEnd();
+            users = await backEndOpponent.GetUsersList();
+            foreach (User user in users)
+            {
+                if (user.UserId != Constants.LocalUser.UserId)
+                {
+                    UsersId.Add(user.UserId);
+                }
             }
         }
     }
