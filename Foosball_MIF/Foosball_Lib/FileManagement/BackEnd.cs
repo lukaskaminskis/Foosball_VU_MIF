@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Foosball_Lib.FileManagement
 {
-    class RegistrationBackEnd
+    class BackEnd
     {
         public enum Message { RegexNoMatch, PassNoMatch, EmailNotMatch, RegSucc, UserExists, Exc};
 
@@ -45,10 +45,8 @@ namespace Foosball_Lib.FileManagement
                     }
                     else
                     {
-                        var users = new List<User>();
-                        string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
-                        FileProcedures file = new FileProcedures();
-                        users = file.UserList(text);
+                        List<User> users = new List<User>();
+                        users = await GetUsersList();
 
                         var regUser = (from selectUser in users
                                        where selectUser.UserId == user.UserId
@@ -56,9 +54,7 @@ namespace Foosball_Lib.FileManagement
 
                         if (regUser == false)
                         {
-                            text = text + String.Format("{0};{1};{2}|", user.UserId, user.GetPassword(), user.Email);
-                            await FileManagement.PCLHelper.DeleteFile(Labels.UsersList);
-                            await FileManagement.PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
+                            AddUser(user);
 
                             Constants.LocalUser = user;
                             return Message.RegSucc;
@@ -75,6 +71,23 @@ namespace Foosball_Lib.FileManagement
             {
                 return Message.Exc;
             }
+        }
+
+        public async Task<List<User>> GetUsersList()
+        {
+            var users = new List<User>();
+            string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
+            FileProcedures file = new FileProcedures();
+            users = file.UserList(text);
+            return users;
+        }
+
+        public async void AddUser(User user)
+        {
+            string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
+            text = text + String.Format("{0};{1};{2}|", user.UserId, user.GetPassword(), user.Email);
+            await FileManagement.PCLHelper.DeleteFile(Labels.UsersList);
+            await FileManagement.PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
         }
 
     }

@@ -6,7 +6,7 @@
              Title="Oponent name">
     <ContentPage.Content>
         
-        <StackLayout x:Name="MasterLayout">
+        <!-- <StackLayout x:Name="MasterLayout">
             <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
                 <Image x:Name="LogoIcon" Source="Icon.png" Margin="0,80,0,0" />
             </StackLayout>
@@ -16,6 +16,28 @@
                 <Entry x:Name="Entry_OponentName" Text="Oponent Name" />
                 <Button x:Name="Btn_Submit" Text="Submit" Clicked="SubmitProcedure" />
             </StackLayout>
-        </StackLayout>
+        </StackLayout> -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <ListView x:Name="OpponentView" Grid.Row="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Clicked="StartMatchProcedure" Text="Start Match"/>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                        <TextCell Text="{Binding UserId}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Orientation="Horizontal" Grid.Row="1">
+                <Button Text="Start Match" HorizontalOptions="FillAndExpand" Clicked="StartMatchProcedure" />
+                <Button Text="Statistics" HorizontalOptions="FillAndExpand" Clicked="StatisticsProcedure" />
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
