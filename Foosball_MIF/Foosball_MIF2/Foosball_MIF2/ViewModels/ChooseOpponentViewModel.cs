@@ -10,7 +10,7 @@ namespace Foosball_MIF2.Views
 {
     public class ChooseOpponentViewModel : BaseViewModel
     {
-        private ObservableCollection<string> _usersId;
+        /*private ObservableCollection<string> _usersId;
         public ObservableCollection<string> UsersId
         {
             get
@@ -67,6 +67,6 @@ namespace Foosball_MIF2.Views
                     UsersId.Add(user.UserId);
                 }
             }
-        }
+        } */
     }
 }

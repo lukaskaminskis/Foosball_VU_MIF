@@ -2,7 +2,7 @@
 
 namespace Foosball_MIF2.ViewModels
 {
-    public interface IViewModelBase : INotifyPropertyChanged
+    public interface IViewModel : INotifyPropertyChanged
     {
     }
 }

@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Foosball_MIF2.ViewModels
 {
-    public abstract class BaseViewModel
+    public abstract class BaseViewModel : IViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

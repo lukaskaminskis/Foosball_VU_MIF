@@ -1,6 +1,8 @@
 ﻿{
   "dependencies": {
+    "Autofac": "4.6.2",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+    "System.Runtime.InteropServices.RuntimeInformation": "4.3.0",
     "Xamarin.Forms": "2.4.0.74863"
   },
   "frameworks": {

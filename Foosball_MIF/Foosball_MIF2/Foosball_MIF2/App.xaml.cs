@@ -1,14 +1,19 @@
 ﻿using Foosball_MIF2.Bootstrapping;
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+//[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Foosball_MIF2
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
         public App()
         {
             InitializeComponent();
-            LoadTypes();
+            //LoadTypes();
         }
 
         protected override void OnStart()
@@ -26,10 +31,10 @@ namespace Foosball_MIF2
             // Handle when your app resumes
         }
 
-        private void LoadTypes()
+        public void LoadTypes(Dictionary<Type, Type> mappedTypes)
         {
             var bootstrapper = new Bootstrapper(this);
-            bootstrapper.Run();
+            bootstrapper.RunWithMappedTypes(mappedTypes);
         }
     }
 }

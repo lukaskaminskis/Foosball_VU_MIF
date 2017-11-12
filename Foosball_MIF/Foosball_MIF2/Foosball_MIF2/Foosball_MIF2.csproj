@@ -40,14 +40,16 @@
     </Compile>
     <Compile Include="Bootstrapping\AutofacBoostrapper.cs" />
     <Compile Include="Bootstrapping\Bootstrapper.cs" />
+    <Compile Include="Bootstrapping\Modules\AutofacModule.cs" />
+    <Compile Include="Bootstrapping\Modules\LoginModule.cs" />
+    <Compile Include="Bootstrapping\Modules\MainModule.cs" />
     <Compile Include="Bootstrapping\Modules\MappedTypeModule.cs" />
     <Compile Include="CustomViews\ImprovedListView.cs" />
+    <Compile Include="Factory\IViewFactory.cs" />
+    <Compile Include="Factory\ViewFactory.cs" />
     <Compile Include="FileManagement\BackEnd.cs" />
     <Compile Include="FileManagement\FileProcedures.cs" />
     <Compile Include="FileManagement\PCLHelper.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -56,10 +58,13 @@
     </Compile>
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\INavigator.cs" />
+    <Compile Include="Services\Navigator.cs" />
     <Compile Include="Validations\Validation.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\ChooseOpponentViewModel.cs" />
-    <Compile Include="ViewModels\IViewModelBase.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\ChooseOpponentPage.xaml.cs">
       <DependentUpon>ChooseOpponentPage.xaml</DependentUpon>
     </Compile>
@@ -72,6 +77,9 @@
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\LoginPage2.xaml.cs">
+      <DependentUpon>LoginPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MatchPage.xaml.cs">
       <DependentUpon>MatchPage.xaml</DependentUpon>
     </Compile>
@@ -81,12 +89,11 @@
     <Compile Include="Views\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -138,7 +145,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\LoginPage.xaml">
+    <EmbeddedResource Include="Views\LoginPage2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -163,6 +170,18 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ChooseOpponentPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\TestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

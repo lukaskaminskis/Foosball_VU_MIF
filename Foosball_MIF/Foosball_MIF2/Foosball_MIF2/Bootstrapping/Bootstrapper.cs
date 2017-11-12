@@ -1,7 +1,9 @@
 ﻿using Autofac;
-using Foosball_MIF2;
-using Foosball_MIF2.Views;
+using Foosball_MIF2.Bootstrapping.Modules;
+using Foosball_MIF2.Factory;
 using Foosball_MIF2.ViewModels;
+using Foosball_MIF2.Views;
+using Xamarin.Forms;
 
 namespace Foosball_MIF2.Bootstrapping
 {
@@ -14,18 +16,30 @@ namespace Foosball_MIF2.Bootstrapping
             _app = app;
         }
 
-        protected override void ConfigureApplication(IContainer container)
+        protected override void ConfigureContainer(ContainerBuilder builder)
         {
-            var chooseOpponent = container.Resolve<ChooseOpponentPage>();
-            var chooseOpponentViewModel = container.Resolve<ChooseOpponentViewModel>();
-            chooseOpponent.BindingContext = chooseOpponentViewModel;
-            _app.MainPage = chooseOpponent;
+            base.ConfigureContainer(builder);
+            builder.RegisterModule<MainModule>();
+            builder.RegisterModule<LoginModule>();
         }
 
-        protected override void RegisterViews(ContainerBuilder builder)
+        protected override void ConfigureApplication(IContainer container)
         {
-            builder.RegisterType<ChooseOpponentPage>().SingleInstance();
-            builder.RegisterType<ChooseOpponentViewModel>().SingleInstance();
+            //var chooseOpponent = container.Resolve<ChooseOpponentPage>();
+            //var chooseOpponentViewModel = container.Resolve<ChooseOpponentViewModel>();
+            //chooseOpponent.BindingContext = chooseOpponentViewModel;
+            var viewFactory = container.Resolve<IViewFactory>();
+            var loginPage = viewFactory.Resolve<LoginViewModel>();
+            var navPage = new NavigationPage(loginPage);
+            _app.MainPage = navPage;
+        }
+
+        protected override void RegisterViews(IViewFactory viewFactory)
+        {
+            //builder.RegisterType<ChooseOpponentPage>().SingleInstance();
+            //builder.RegisterType<ChooseOpponentViewModel>().SingleInstance();
+            viewFactory.Register<LoginViewModel, LoginPage>();
+            viewFactory.Register<ChooseOpponentViewModel, ChooseOpponentPage>();
         }
     }
 }

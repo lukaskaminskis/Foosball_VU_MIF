@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Foosball_MIF2.CustomViews"
+             xmlns:local="clr-namespace:Foosball_MIF2.Views"
              x:Class="Foosball_MIF2.Views.ChooseOpponentPage"
-             BackgroundImage="background.jpg"
-             Title="Oponent name">
+             BackgroundImage="background.jpg">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding AlertMessage}" TextColor="Cyan"/>
-            <local:ImprovedListView ItemsSource="{Binding UsersId}" ItemClickedCommand="{Binding ItemClickedCommand}"/>
+            <!-- <Label Text="{Binding AlertMessage}" TextColor="Cyan"/>
+            <local:ImprovedListView ItemsSource="{Binding UsersId}" ItemClickedCommand="{Binding ItemClickedCommand}"/> -->
+            <Label Text="Hello Motherfucker" TextColor="Aqua"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

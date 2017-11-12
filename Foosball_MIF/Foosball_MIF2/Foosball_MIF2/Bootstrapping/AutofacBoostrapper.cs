@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Foosball_MIF2.Bootstrapping.Modules;
+using Foosball_MIF2.Factory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,23 +17,25 @@ namespace Foosball_MIF2.Bootstrapping
 
             var builder = new ContainerBuilder();
 
-            RegisterViews(builder);
-
             ConfigureContainer(builder);
 
             var container = builder.Build();
+
+            var viewFactory = container.Resolve<IViewFactory>();
+            RegisterViews(viewFactory);
             ConfigureApplication(container);
         }
 
         protected virtual void ConfigureContainer(ContainerBuilder builder)
         {
-            if (_mappedTypes != null && !_mappedTypes.Any())
+            if (_mappedTypes != null && _mappedTypes.Any())
             {
                 builder.RegisterModule(new MappedTypeModule(_mappedTypes));
             }
+            builder.RegisterModule<AutofacModule>();
         }
 
-        protected abstract void RegisterViews(ContainerBuilder builder);
+        protected abstract void RegisterViews(IViewFactory builder);
 
         protected abstract void ConfigureApplication(IContainer container);
     }

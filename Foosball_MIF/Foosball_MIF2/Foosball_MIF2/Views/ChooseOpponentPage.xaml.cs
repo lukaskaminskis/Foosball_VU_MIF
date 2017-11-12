@@ -15,6 +15,7 @@ namespace Foosball_MIF2.Views
         public ChooseOpponentPage()
         {
             InitializeComponent();
+            //BindingContext = new ChooseOpponentViewModel();
         }
     }
 }
