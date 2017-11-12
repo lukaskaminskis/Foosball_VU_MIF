@@ -1,12 +1,12 @@
-﻿using Foosball_Lib.FileManagement;
-using Foosball_Lib.Models;
-using Foosball_Lib.ViewModels;
+﻿using Foosball_MIF2.FileManagement;
+using Foosball_MIF2.Models;
+using Foosball_MIF2.ViewModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Foosball_Lib.Views
+namespace Foosball_MIF2.Views
 {
     public class ChooseOpponentViewModel : BaseViewModel
     {

@@ -1,11 +1,10 @@
-﻿using Foosball_Lib.Models;
-using Foosball_MIF2.Models;
+﻿using Foosball_MIF2.Models;
 using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Foosball_Lib.Views
+namespace Foosball_MIF2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MatchPage : ContentPage

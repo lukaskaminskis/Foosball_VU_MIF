@@ -1,10 +1,10 @@
 ﻿using Autofac;
-using Foosball_Lib.Bootstrapping.Modules;
+using Foosball_MIF2.Bootstrapping.Modules;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Foosball_Lib.Bootstrapping
+namespace Foosball_MIF2.Bootstrapping
 {
     public abstract class AutofacBoostrapper
     {

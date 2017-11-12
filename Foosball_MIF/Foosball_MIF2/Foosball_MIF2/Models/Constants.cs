@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace Foosball_Lib.Models
+namespace Foosball_MIF2.Models
 {
     public class Constants
     {

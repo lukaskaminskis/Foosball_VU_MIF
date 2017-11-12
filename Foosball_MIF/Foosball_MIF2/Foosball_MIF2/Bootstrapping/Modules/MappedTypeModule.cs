@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Foosball_Lib.Bootstrapping.Modules
+namespace Foosball_MIF2.Bootstrapping.Modules
 {
     public class MappedTypeModule : Module
     {

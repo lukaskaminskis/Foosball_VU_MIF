@@ -1,13 +1,13 @@
-﻿using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
-using Foosball_Lib.Views;
+﻿using Foosball_MIF2.Models;
+using Foosball_MIF2.Validations;
+using Foosball_MIF2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Foosball_Lib.FileManagement
+namespace Foosball_MIF2.FileManagement
 {
     class BackEnd
     {

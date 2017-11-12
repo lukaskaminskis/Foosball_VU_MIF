@@ -1,8 +1,8 @@
-﻿using Foosball_Lib.Models;
+﻿using Foosball_MIF2.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Foosball_Lib.FileManagement
+namespace Foosball_MIF2.FileManagement
 {
     class FileProcedures
     {

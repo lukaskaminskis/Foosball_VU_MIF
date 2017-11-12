@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Foosball_Lib.Views
+namespace Foosball_MIF2.Views
 {
     public class ImprovedListView : ListView
     {

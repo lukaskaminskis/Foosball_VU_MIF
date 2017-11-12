@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Foosball_Lib.ViewModels
+namespace Foosball_MIF2.ViewModels
 {
     public abstract class BaseViewModel
     {

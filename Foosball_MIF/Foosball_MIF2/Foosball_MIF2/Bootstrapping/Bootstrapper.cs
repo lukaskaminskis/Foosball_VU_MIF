@@ -3,7 +3,7 @@ using Foosball_MIF2;
 using Foosball_MIF2.Views;
 using Foosball_MIF2.ViewModels;
 
-namespace Foosball_Lib.Bootstrapping
+namespace Foosball_MIF2.Bootstrapping
 {
     public class Bootstrapper : AutofacBoostrapper
     {
@@ -18,7 +18,7 @@ namespace Foosball_Lib.Bootstrapping
         {
             var chooseOpponent = container.Resolve<ChooseOpponentPage>();
             var chooseOpponentViewModel = container.Resolve<ChooseOpponentViewModel>();
-            chooseOpponente.BindingContext = chooseOpponentViewModel;
+            chooseOpponent.BindingContext = chooseOpponentViewModel;
             _app.MainPage = chooseOpponent;
         }
 

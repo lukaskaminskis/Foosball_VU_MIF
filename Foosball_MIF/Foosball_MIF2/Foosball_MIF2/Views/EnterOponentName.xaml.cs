@@ -1,13 +1,13 @@
-﻿using Foosball_Lib.FileManagement;
-using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
+﻿using Foosball_MIF2.FileManagement;
+using Foosball_MIF2.Models;
+using Foosball_MIF2.Validations;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Foosball_Lib.Views
+namespace Foosball_MIF2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EnterOponentName : ContentPage
@@ -16,7 +16,7 @@ namespace Foosball_Lib.Views
         public EnterOponentName()
         {
             InitializeComponent();
-            BindingContext = new EnterOponentNameViewModel();
+            BindingContext = new ChooseOpponentViewModel();
             //Init();
         }
 

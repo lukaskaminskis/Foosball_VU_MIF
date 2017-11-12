@@ -1,7 +1,7 @@
-﻿using Foosball_Lib.Models;
+﻿using Foosball_MIF2.Models;
 using System.Text.RegularExpressions;
 
-namespace Foosball_Lib.Validations
+namespace Foosball_MIF2.Validations
 {
     public class Validation
     {

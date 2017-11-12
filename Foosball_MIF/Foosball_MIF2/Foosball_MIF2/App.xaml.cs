@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Foosball_MIF2.Bootstrapping;
+using Xamarin.Forms;
 
 namespace Foosball_MIF2
 {

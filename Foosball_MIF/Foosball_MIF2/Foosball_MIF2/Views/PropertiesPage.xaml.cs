@@ -1,11 +1,11 @@
-﻿using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
+﻿using Foosball_MIF2.Models;
+using Foosball_MIF2.Validations;
 using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Foosball_Lib.Views
+namespace Foosball_MIF2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PropertiesPage : ContentPage

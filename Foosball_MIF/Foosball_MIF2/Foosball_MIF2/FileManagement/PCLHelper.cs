@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Foosball_Lib.FileManagement
+namespace Foosball_MIF2.FileManagement
 {
     public static class PCLHelper
     {
