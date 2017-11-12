@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace Foosball_Lib.Views
 {
-    public class EnterOponentNameViewModel : BaseViewModel
+    public class ChooseOpponentViewModel : BaseViewModel
     {
         private ObservableCollection<string> _usersId;
         public ObservableCollection<string> UsersId
@@ -24,7 +24,7 @@ namespace Foosball_Lib.Views
             }
         }
 
-        public EnterOponentNameViewModel()
+        public ChooseOpponentViewModel()
         {
             Init();
         }

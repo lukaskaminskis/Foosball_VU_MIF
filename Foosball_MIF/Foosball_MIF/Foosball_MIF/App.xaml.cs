@@ -1,4 +1,5 @@
-﻿using Foosball_Lib.Views;
+﻿using Foosball_Lib.Bootstrapping;
+using Foosball_Lib.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,8 @@ namespace Foosball_MIF
 		public App ()
 		{
 
-			//InitializeComponent();
-
-			MainPage = new LoginPage();
-
+			InitializeComponent();
+			//MainPage = new LoginPage();
 		}
 
 		protected override void OnStart ()
@@ -34,6 +33,11 @@ namespace Foosball_MIF
 			// Handle when your app resumes
 		}
 
-	}
+        internal void LoadTypes(Dictionary<Type, Type> mappedTypes)
+        {
+            //var bootstrapper = new Bootstrapper();
+            //bootstrapper.RunWithMappedTypes(mappedTypes);
+        }
+    }
 
 }
