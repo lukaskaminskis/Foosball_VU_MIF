@@ -27,7 +27,7 @@ namespace Foosball_Lib.Views
 
         public async void NewOponentProcedure(object e, EventArgs s)
         {
-            await Navigation.PushModalAsync(new EnterOponentName());
+            await Navigation.PushModalAsync(new OpponentListViewPage());
         }
 
         public async void SetGoalLimitProcedure(object e, EventArgs s)
