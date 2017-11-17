@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="FileManagement\FileProcedures.cs" />
-    <Compile Include="FileManagement\RegistrationBackEnd.cs" />
+    <Compile Include="FileManagement\BackEnd.cs" />
     <Compile Include="Models\Constants.cs" />
     <Compile Include="Models\Labels.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -16,7 +16,7 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        public void Init()
+        void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
             Lbl_Hello.TextColor = Constants.MainTextColor;

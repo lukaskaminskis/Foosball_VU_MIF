@@ -4,7 +4,7 @@ using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Foosball_Lib.FileManagement.RegistrationBackEnd;
+using static Foosball_Lib.FileManagement.BackEnd;
 
 namespace Foosball_Lib.Views
 {
@@ -33,7 +33,7 @@ namespace Foosball_Lib.Views
 
         async void RegisterProcedure(object e, EventArgs s)
         {
-            RegistrationBackEnd backEnd = new RegistrationBackEnd();
+            BackEnd backEnd = new BackEnd();
 
             switch (await backEnd.BackEndAsync(Entry_Username.Text, Entry_Password.Text, Entry_RepeatPassword.Text, Entry_Email.Text))
             {

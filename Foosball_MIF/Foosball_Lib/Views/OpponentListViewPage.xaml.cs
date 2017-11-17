@@ -18,6 +18,12 @@ namespace Foosball_Lib.Views
         {
             InitializeComponent();
 
+            Init();
+        }
+
+        void Init()
+        {
+            var users = 
             Items = new ObservableCollection<string>
             {
                 "Item 1",
@@ -34,8 +40,9 @@ namespace Foosball_Lib.Views
         {
             if (e.Item == null)
                 return;
+            var item = e.Item as string;
 
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            await DisplayAlert("Item Tapped", "An item was tapped. " + item, "OK");
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
