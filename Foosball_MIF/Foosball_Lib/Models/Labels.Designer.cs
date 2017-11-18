@@ -107,6 +107,15 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        internal static string Info {
+            get {
+                return ResourceManager.GetString("Info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         internal static string Login {
@@ -157,6 +166,15 @@ namespace Foosball_Lib.Models {
         internal static string NoOp {
             get {
                 return ResourceManager.GetString("NoOp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There are no users in database, failed to login.
+        /// </summary>
+        internal static string NoUsers {
+            get {
+                return ResourceManager.GetString("NoUsers", resourceCulture);
             }
         }
         

@@ -32,7 +32,7 @@ namespace Foosball_Lib.Views
             else
             {
                 Constants.GoalLimit = Int32.Parse(Entry_GoalLimit.Text);
-                await Navigation.PopModalAsync();
+                await Navigation.PopModalAsync(false);
             }
         }
         public static bool Checkgoallimit(string Entry_Limit)

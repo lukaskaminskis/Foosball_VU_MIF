@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Foosball_Lib.FileManagement
 {
-    class RegistrationBackEnd
+    class BackEnd
     {
         public enum Message { RegexNoMatch, PassNoMatch, EmailNotMatch, RegSucc, UserExists, Exc};
 
@@ -27,7 +27,7 @@ namespace Foosball_Lib.FileManagement
                 {
                     return Message.PassNoMatch;
                 }
-                else if (Validation.EmailPatternMatch(email))
+                else if (!Validation.EmailPatternMatch(email))
                 {
                     return Message.EmailNotMatch;
                 }
@@ -37,28 +37,20 @@ namespace Foosball_Lib.FileManagement
                     bool fileExists = await PCLHelper.IsFileExistAsync(Labels.UsersList);
                     if (!fileExists)
                     {
-                        string text = String.Format("{0};{1};{2}|", user.UserId, user.GetPassword(), user.Email);
-                        await PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
+                        NewUserAsync(user);
 
                         Constants.LocalUser = user;
                         return Message.RegSucc;
                     }
                     else
                     {
-                        var users = new List<User>();
-                        string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
-                        FileProcedures file = new FileProcedures();
-                        users = file.UserList(text);
-
-                        var regUser = (from selectUser in users
+                        var regUser = (from selectUser in Constants.userList
                                        where selectUser.UserId == user.UserId
                                        select selectUser).Any();
 
                         if (regUser == false)
                         {
-                            text = text + String.Format("{0};{1};{2}|", user.UserId, user.GetPassword(), user.Email);
-                            await FileManagement.PCLHelper.DeleteFile(Labels.UsersList);
-                            await FileManagement.PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
+                            NewUserAsync(user);
 
                             Constants.LocalUser = user;
                             return Message.RegSucc;
@@ -75,6 +67,22 @@ namespace Foosball_Lib.FileManagement
             {
                 return Message.Exc;
             }
+        }
+
+        public static async Task<List<User>> GetUserListAsync()
+        {
+            string text = await PCLHelper.ReadAllTextAsync(Labels.UsersList);
+            FileProcedures file = new FileProcedures();
+            var userList = file.UserList(text);
+            return userList;
+        }
+
+        public static async void NewUserAsync(User user)
+        {
+            string text = await PCLHelper.ReadAllTextAsync(Labels.UsersList);
+            text = text + String.Format("{0};{1};{2}|", user.UserId, user.GetPassword(), user.Email);
+            await PCLHelper.DeleteFile(Labels.UsersList);
+            await PCLHelper.WriteTextAllAsync(Labels.UsersList, text);
         }
 
     }

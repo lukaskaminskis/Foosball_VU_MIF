@@ -20,15 +20,13 @@ namespace Foosball_Lib.Views
         {
             BackgroundColor = Constants.BackgroundColor;
             Lbl_OponentName.TextColor = Constants.MainTextColor;
-            LogoIcon.HeightRequest = Constants.LoginIconHeight;
-            Entry_OponentName.Text = Constants.OponentName;
         }
 
         public async void SubmitProcedure(object e, EventArgs s)
         {
             if (Validation.UsernamePatternMatch(Entry_OponentName.Text))
             {
-                Constants.OponentName = Entry_OponentName.Text;
+                //Constants.OponentName = Entry_OponentName.Text;
                 await Navigation.PopModalAsync();
             }
             else

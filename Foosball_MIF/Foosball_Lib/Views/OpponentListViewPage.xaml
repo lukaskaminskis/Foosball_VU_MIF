@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Foosball_Lib.Views.OpponentListViewPage"
+             Title="Opponent List"
+             BackgroundImage="background.jpg">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="MyListView" CachingStrategy="RecycleElement" ItemTapped="Handle_ItemTapped" RowHeight="60" Grid.Row="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Image Source="PlayerIcon.png"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding UserId}" TextColor="Cyan" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" Grid.Row="1">
+            <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Choose Opponent" Clicked="ChooseOpponent" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace Foosball_Lib.Models
 {
@@ -8,12 +9,10 @@ namespace Foosball_Lib.Models
         public static Color MainTextColor = Color.FromRgb(190,222,186) ;
         public static int LoginIconHeight = 120;
         public static int MaxGoalLimit = 10;
-        public static string OponentName = "";
-        public static int HomeGoalCount = 0;
-        public static int AwayGoalCount = 0;
 
+        public static List<User> userList;
+        public static User opponent;
         public static User LocalUser;
-        public static int GoalLimit;
-
+        public static int GoalLimit = 10;
     }
 }

@@ -16,7 +16,7 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        public void Init()
+        void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
             Lbl_Hello.TextColor = Constants.MainTextColor;
@@ -27,39 +27,36 @@ namespace Foosball_Lib.Views
 
         public async void NewOponentProcedure(object e, EventArgs s)
         {
-            await Navigation.PushModalAsync(new EnterOponentName());
+            await Navigation.PushModalAsync(new OpponentListViewPage(), false);
         }
 
         public async void SetGoalLimitProcedure(object e, EventArgs s)
         {
-            await Navigation.PushModalAsync(new GoalLimit());
+            await Navigation.PushModalAsync(new GoalLimit(), false);
         }
 
-        public async void StartMatchProcedure(object e, EventArgs s)
+        async void Logout(object sender, EventArgs e)
         {
-            if (!Validation.IsOpponentAssigned())
+            Constants.LocalUser = null;
+            Constants.GoalLimit = 0;
+            await Navigation.PopModalAsync(false);
+        }
+
+        async void StartMatchProcedure(object sender, EventArgs e)
+        {
+            if (Constants.opponent == null)
             {
                 await DisplayAlert(Labels.NoOp, Labels.OpNotChosen, Labels.Ok);
             }
-            else if(!Validation.IsGoalLimitAssigned())
-            {
-                await DisplayAlert(Labels.NoLimit, Labels.GoalLimit, Labels.Ok);
-            }
             else
             {
-                await Navigation.PushModalAsync(new MatchPage());
+                await Navigation.PushModalAsync(new MatchPage(), false);
             }
         }
 
-        public async void Back()
+        protected override bool OnBackButtonPressed()
         {
-            Constants.OponentName = "";
-            Constants.LocalUser = null;
-            Constants.GoalLimit = 0;
-            Constants.OponentName = "";
-            Constants.HomeGoalCount = 0;
-            Constants.AwayGoalCount = 0;
-            await Navigation.PopModalAsync();
+            return true;
         }
     }
 }

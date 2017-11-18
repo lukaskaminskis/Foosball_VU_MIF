@@ -18,9 +18,10 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        void Init()
+        async void Init()
         {
-            BackgroundColor             = Constants.BackgroundColor;
+            Constants.userList          = await BackEnd.GetUserListAsync();
+            //BackgroundColor             = Constants.BackgroundColor;
             Lbl_Username.TextColor      = Constants.MainTextColor;
             Lbl_Password.TextColor      = Constants.MainTextColor;
             ActivitySpinner.IsVisible   = false;
@@ -37,21 +38,18 @@ namespace Foosball_Lib.Views
                 bool fileExist = await FileManagement.PCLHelper.IsFileExistAsync(Labels.UsersList);
                 if (fileExist)
                 {
-                    string text = await FileManagement.PCLHelper.ReadAllTextAsync(Labels.UsersList);
-                    var users = new List<User>();
-                    FileProcedures file = new FileProcedures();
-                    users = file.UserList(text);
-
-                    var LogUser  = (from selectUser in users
-                                  where selectUser.UserId == user.UserId 
-                                  && selectUser.GetPassword() == user.GetPassword()
-                                  select selectUser).Any();
+                    var LogUser = (from selectUser in Constants.userList
+                                   where selectUser.UserId == user.UserId
+                                   && selectUser.GetPassword() == user.GetPassword()
+                                   select selectUser).Any();
 
                     if (LogUser == true)
                     {
+                        Entry_Password.Text = "";
+                        Entry_Username.Text = "";
                         Constants.LocalUser = user;
                         await DisplayAlert(Labels.Login, Labels.LoginSucc, Labels.Ok);
-                        await Navigation.PushModalAsync(new PropertiesPage());
+                        await Navigation.PushModalAsync(new PropertiesPage(), false);
                     }
                     else
                     {
@@ -60,31 +58,24 @@ namespace Foosball_Lib.Views
                 }
                 else
                 {
-                    await DisplayAlert("Fail", "There are no users in database, failed to login", "Ok");
+                    await DisplayAlert(Labels.Failed, Labels.NoUsers, Labels.Ok);
                 }
             }
             catch (Exception exc)
             {
+
+            }
+#if Debug
+            catch (Exception exc)
+            {
                 await DisplayAlert("Exc", exc.ToString(), "ok");
             }
-
+#endif 
         }
 
         void RegisterProcedure(object e, EventArgs s)
         {
-            Navigation.PushModalAsync(new RegistrationPage());
-
+            Navigation.PushModalAsync(new RegistrationPage(), false);
         }
-
-        public string ContentBuilder(params string[] content)
-        {
-            StringBuilder contentbuilder = new StringBuilder();
-            foreach (var item in content)
-            {
-                contentbuilder.AppendLine(item.ToString());
-            }
-            return contentbuilder.ToString();
-        }
-
     }
 }
