@@ -27,7 +27,7 @@ namespace Foosball_Lib.FileManagement
                 {
                     return Message.PassNoMatch;
                 }
-                else if (Validation.EmailPatternMatch(email))
+                else if (!Validation.EmailPatternMatch(email))
                 {
                     return Message.EmailNotMatch;
                 }
