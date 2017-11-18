@@ -48,7 +48,7 @@ namespace Foosball_Lib.Views
                     break;
                 case Message.RegSucc:
                     await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
-                    await Navigation.PushModalAsync(new PropertiesPage());
+                    await Navigation.PopAsync();
                     break;
                 case Message.UserExists:
                     await DisplayAlert(Labels.Failed, Labels.UserExists, Labels.Ok);

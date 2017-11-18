@@ -186,6 +186,9 @@
   <data name="Exception" xml:space="preserve">
     <value>Exception has been caught!</value>
   </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
   <data name="NoUsers" xml:space="preserve">
     <value>There are no users in database, failed to login</value>
   </data>

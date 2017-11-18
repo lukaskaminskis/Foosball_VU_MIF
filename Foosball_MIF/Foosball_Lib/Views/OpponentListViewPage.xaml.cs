@@ -21,10 +21,9 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        async void Init()
+        void Init()
         {
-            var userList = await BackEnd.GetUserListAsync();
-            foreach (User user in userList)
+            foreach (User user in Constants.userList)
             {
                 if (user.UserId != Constants.LocalUser.UserId)
                 {
@@ -34,33 +33,37 @@ namespace Foosball_Lib.Views
             MyListView.ItemsSource = opponentList;
         }
 
-        async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.Item == null)
-                return;
             selectedUser = e.Item as User;
-
-            await DisplayAlert("Item Tapped", "Username : " + selectedUser.UserId + " Password : " + selectedUser.GetPassword(), "OK");
-
             //Deselect Item
             //((ListView)sender).SelectedItem = null;
         }
 
-        async void StartMatch(object sender, EventArgs e)
+        void ChooseOpponent(object sender, EventArgs e)
         {
             if (selectedUser != null)
             {
-                await DisplayAlert("Ok", $"You selected {selectedUser.UserId} ", "Ok");
+                Constants.opponent = selectedUser;
+                Navigation.PopModalAsync(false);
             }
             else
             {
-                await DisplayAlert("Ok", "Player not selected", "Ok");
+                DisplayAlert("Ok", "Player not selected", "Ok");
             }
         }
 
         async void DisplayPlayerInfo(object sender, EventArgs e)
         {
-
+            if (selectedUser == null)
+            {
+                await DisplayAlert(Labels.Failed, "Opponent has not been selected!", Labels.Ok);
+            }
+            else
+            {
+                await DisplayAlert(Labels.Info, $"Username : {selectedUser.UserId} " +
+                    $"\n Password: {selectedUser.GetPassword()} \n Email: {selectedUser.Email}", Labels.Ok);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
              x:Class="Foosball_Lib.Views.PropertiesPage"
              BackgroundImage="background.jpg"
              Title="Properties">
-    <ContentPage.Content>
+    <ContentPage.Content >
 
         <StackLayout x:Name="MasterLayout">
             <StackLayout x:Name="LogoStack" VerticalOptions="StartAndExpand">
@@ -14,9 +14,10 @@
             <StackLayout x:Name="PropertiesStack" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
                 <Label x:Name="Lbl_Hello" Text="Hello, Foosball lover!" FontSize="24.0" />
                 <Label x:Name="Lbl_User" Text="" />
-                <Button x:Name="Btn_Oponent" Text="Enter Oponent name" Clicked="NewOponentProcedure" />
+                <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure"/>
+                <Button x:Name="Btn_ChooseOpponent" Text="Choose Opponent" Clicked="NewOponentProcedure" />
                 <Button x:Name="Btn_GoalLimit" Text="Set Goal limit" Clicked="SetGoalLimitProcedure" />
-                <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure" />
+                <Button Text="Logout" Clicked="Logout"/>
             </StackLayout>
         </StackLayout>
       

@@ -9,6 +9,9 @@ namespace Foosball_Lib.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MatchPage : ContentPage
     {
+        private int awayGoalCount = 0;
+        private int homeGoalCount = 0;
+
         public MatchPage()
         {
             InitializeComponent();
@@ -17,39 +20,36 @@ namespace Foosball_Lib.Views
 
         public void Init()
         {
-            BackgroundColor = Constants.BackgroundColor;
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
-            Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + homeGoalCount.ToString();
+            Btn_AwayGoal.Text = Constants.opponent.UserId + " : " + awayGoalCount.ToString();
             Btn_HomeGoal.TextColor = Constants.MainTextColor;
             Btn_AwayGoal.TextColor = Constants.MainTextColor;
         }
 
         public async void HomeGoalProcedure(object e, EventArgs s)
         {
-            Constants.HomeGoalCount++;
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + Constants.HomeGoalCount.ToString();
-            if (Constants.HomeGoalCount >= Constants.GoalLimit)
+            homeGoalCount++;
+            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + homeGoalCount.ToString();
+            if (homeGoalCount >= Constants.GoalLimit)
             {
+                homeGoalCount = 0;
+                awayGoalCount = 0;
                 await DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserId + Labels.WonGame, Labels.Ok);
-                Constants.OponentName = "";
-                Constants.HomeGoalCount = 0;
-                Constants.AwayGoalCount = 0;
-                await Navigation.PopModalAsync();
+                await Navigation.PopModalAsync(false);
             }
         }
 
         public async void AwayGoalProcedure(object e, EventArgs s)
         {
-            Constants.AwayGoalCount++;
-            Btn_AwayGoal.Text = Constants.OponentName + " : " + Constants.AwayGoalCount.ToString();
+            awayGoalCount++;
+            Btn_AwayGoal.Text = Constants.opponent.UserId + " : " + awayGoalCount.ToString();
 
-            if (Constants.AwayGoalCount >= Constants.GoalLimit)
+            if (awayGoalCount >= Constants.GoalLimit)
             {
-               await  DisplayAlert(Labels.Win, Labels.Player + Constants.OponentName + Labels.WonGame, Labels.Ok);
-                Constants.OponentName = "";
-                Constants.HomeGoalCount = 0;
-                Constants.AwayGoalCount = 0;
-                await Navigation.PopModalAsync();
+                homeGoalCount = 0;
+                awayGoalCount = 0;
+                await  DisplayAlert(Labels.Win, Labels.Player + Constants.opponent.UserId + Labels.WonGame, Labels.Ok);
+                await Navigation.PopModalAsync(false);
             }
         }
 

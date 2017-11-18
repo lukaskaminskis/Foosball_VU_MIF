@@ -25,7 +25,7 @@
         </ListView>
         <StackLayout Orientation="Horizontal" Grid.Row="1">
             <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand"/>
-            <Button Text="Start Match" Clicked="StartMatch" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Choose Opponent" Clicked="ChooseOpponent" HorizontalOptions="FillAndExpand"/>
         </StackLayout>
     </Grid>
 </ContentPage>

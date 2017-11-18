@@ -29,7 +29,7 @@ namespace Foosball_Lib.Validations
             return regex.IsMatch(_password);
         }
 
-        public static bool IsOpponentAssigned()
+        /*public static bool IsOpponentAssigned()
         {
             if (Constants.OponentName == "" || Constants.OponentName == null)
             {
@@ -39,7 +39,7 @@ namespace Foosball_Lib.Validations
             {
                 return true;
             }
-        }
+        }*/
 
         public static bool IsGoalLimitAssigned()
         {

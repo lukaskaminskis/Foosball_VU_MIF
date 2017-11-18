@@ -44,9 +44,7 @@ namespace Foosball_Lib.FileManagement
                     }
                     else
                     {
-                        var users = await GetUserListAsync();
-
-                        var regUser = (from selectUser in users
+                        var regUser = (from selectUser in Constants.userList
                                        where selectUser.UserId == user.UserId
                                        select selectUser).Any();
 
