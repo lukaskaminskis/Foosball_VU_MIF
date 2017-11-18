@@ -4,39 +4,28 @@
              x:Class="Foosball_Lib.Views.OpponentListViewPage"
              Title="Opponent List"
              BackgroundImage="background.jpg">
-  <ListView x:Name="MyListView"
-            ItemsSource="{Binding Items}"
-            ItemTapped="Handle_ItemTapped"
-            CachingStrategy="RecycleElement">
-            
-    <!--Built in Cells-->
-    <ListView.ItemTemplate>
-        <DataTemplate>
-            <ViewCell>
-                <StackLayout Orientation="Horizontal" Padding="5">
-                    <Image Source="PlayerIcon.png" />
-                        <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding .}" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="MyListView" CachingStrategy="RecycleElement" ItemTapped="Handle_ItemTapped" RowHeight="60" Grid.Row="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Image Source="PlayerIcon.png"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding UserId}" TextColor="Cyan" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
                         </StackLayout>
-                </StackLayout>
-            </ViewCell>
-        </DataTemplate>
-    </ListView.ItemTemplate>
-    
-    <!--Custom View Cells-->
-    <!--
-    <ListView.ItemTemplate>
-      <DataTemplate>
-        <ViewCell>
-          <StackLayout>
-            <Label Text="{Binding Text}" 
-                   Style="{DynamicResource ListItemTextStyle}" />
-            <Label Text="{Binding Detail}" 
-                   Style="{DynamicResource ListItemDetailTextStyle}"/>
-          </StackLayout>
-        </ViewCell>
-      </DataTemplate>
-    </ListView.ItemTemplate>
-    -->
-  </ListView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout Orientation="Horizontal" Grid.Row="1">
+            <Button Text="Player Info" Clicked="DisplayPlayerInfo" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Start Match" Clicked="StartMatch" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+    </Grid>
 </ContentPage>
