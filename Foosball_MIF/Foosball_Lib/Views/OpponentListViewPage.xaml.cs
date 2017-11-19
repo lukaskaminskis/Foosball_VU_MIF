@@ -61,8 +61,9 @@ namespace Foosball_Lib.Views
             }
             else
             {
-                await DisplayAlert(Labels.Info, $"Username : {selectedUser.UserId} " +
-                    $"\n Password: {selectedUser.GetPassword()} \n Email: {selectedUser.Email}", Labels.Ok);
+                await DisplayAlert(Labels.Info, $"Username : {selectedUser.UserId}" +
+                    $"\nPassword: {selectedUser.GetPassword()}\nEmail: {selectedUser.Email}" +
+                    $"\nWon :{selectedUser.Wins}\nLost :{selectedUser.Loses}", Labels.Ok);
             }
         }
     }

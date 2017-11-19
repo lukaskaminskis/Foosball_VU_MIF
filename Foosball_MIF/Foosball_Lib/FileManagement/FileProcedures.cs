@@ -18,7 +18,7 @@ namespace Foosball_Lib.FileManagement
             {
                 string[] split;
                 split = line.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
-                User user = new User(split[0], split[1], split[2] ?? "NoEmail");
+                User user = new User(split[0], split[1], split[2] ?? "NoEmail", int.Parse(split[3]), int.Parse(split[4]), int.Parse(split[5]));
                 users.Add(user);
             }
             return users;
