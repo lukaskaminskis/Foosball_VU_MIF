@@ -6,8 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using TodoWCFService;
-using System.ServiceModel;
+using Foosball_MIF.Droid.Validations;
 
 namespace Foosball_MIF.Droid
 {
@@ -16,12 +15,9 @@ namespace Foosball_MIF.Droid
 	{
 		protected override void OnCreate (Bundle bundle)
 		{
-            ITodoService todoService = new TodoServiceClient(
-                new BasicHttpBinding(),
-                new EndpointAddress("http://192.168.43.42/foos/TodoService.svc"));
 
-            System.Console.WriteLine("Response:");
-            System.Console.WriteLine(todoService.UsernamePatternMatch("jonas"));
+            App.Init(new AndroidValidation());
+            
             TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar; 
 

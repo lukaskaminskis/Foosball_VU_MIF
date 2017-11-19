@@ -9,17 +9,18 @@ using System.Threading.Tasks;
 
 namespace Foosball_Lib.FileManagement
 {
-    class RegistrationBackEnd
+    public class RegistrationBackEnd
     {
+        public static IValidation RemoteValidation { get; set; }
         public enum Message { RegexNoMatch, PassNoMatch, EmailNotMatch, RegSucc, UserExists, Exc};
 
         public async Task<Message> BackEndAsync(string username, string password, string repeatPassword, string email)
         {
             try
             {
-                if (!Validation.UsernamePatternMatch(username)
-                        && !Validation.PasswordPatternMatch(password)
-                        && !Validation.PasswordPatternMatch(repeatPassword))
+                if (!RemoteValidation.UsernamePatternMatch(username)
+                        && !RemoteValidation.PasswordPatternMatch(password)
+                        && !RemoteValidation.PasswordPatternMatch(repeatPassword))
                 {
                     return Message.RegexNoMatch;
                 }
@@ -27,7 +28,7 @@ namespace Foosball_Lib.FileManagement
                 {
                     return Message.PassNoMatch;
                 }
-                else if (Validation.EmailPatternMatch(email))
+                else if (!RemoteValidation.EmailPatternMatch(email))
                 {
                     return Message.EmailNotMatch;
                 }

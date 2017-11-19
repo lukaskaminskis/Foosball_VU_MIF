@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosball_Lib", "Foosball_Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Foosball_MIFTests", "Foosball_MIFTests\Foosball_MIFTests.csproj", "{91FDA12A-7434-4884-BEAC-D18CB7A75E5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoWCFService", "TodoWCFService\TodoWCFService.csproj", "{CE194B67-3590-4D0B-8771-865FFB61C836}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoosballWCFService", "TodoWCFService\FoosballWCFService.csproj", "{CE194B67-3590-4D0B-8771-865FFB61C836}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
