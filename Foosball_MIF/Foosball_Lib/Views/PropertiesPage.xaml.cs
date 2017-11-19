@@ -1,4 +1,5 @@
-﻿using Foosball_Lib.Models;
+﻿using Foosball_Lib.FileManagement;
+using Foosball_Lib.Models;
 using Foosball_Lib.Validations;
 using System;
 
@@ -16,13 +17,14 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        void Init()
+        async void Init()
         {
-            BackgroundColor = Constants.BackgroundColor;
-            Lbl_Hello.TextColor = Constants.MainTextColor;
-            Lbl_User.TextColor = Constants.MainTextColor;
-            Lbl_User.Text = "Welcome " + Constants.LocalUser.UserId;
-            LogoIcon.HeightRequest = Constants.LoginIconHeight;
+            Constants.userList      = await BackEnd.GetUserListAsync();
+            BackgroundColor         = Constants.BackgroundColor;
+            Lbl_Hello.TextColor     = Constants.MainTextColor;
+            Lbl_User.TextColor      = Constants.MainTextColor;
+            Lbl_User.Text           = "Welcome " + Constants.LocalUser.UserId;
+            LogoIcon.HeightRequest  = Constants.LoginIconHeight;
         }
 
         public async void NewOponentProcedure(object e, EventArgs s)

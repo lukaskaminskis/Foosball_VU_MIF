@@ -17,8 +17,9 @@ namespace Foosball_Lib.Views
             Init();
         }
 
-        void Init()
+        async void Init()
         {
+            Constants.userList              = await GetUserListAsync();
             BackgroundColor                 = Constants.BackgroundColor;
             Lbl_Username.TextColor          = Constants.MainTextColor;
             Lbl_Password.TextColor          = Constants.MainTextColor;
@@ -48,7 +49,7 @@ namespace Foosball_Lib.Views
                     break;
                 case Message.RegSucc:
                     await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
-                    await Navigation.PopAsync();
+                    await Navigation.PopModalAsync();
                     break;
                 case Message.UserExists:
                     await DisplayAlert(Labels.Failed, Labels.UserExists, Labels.Ok);

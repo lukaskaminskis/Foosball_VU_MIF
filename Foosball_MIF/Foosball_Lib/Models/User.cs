@@ -5,17 +5,20 @@
         public string UserId { get; private set; }
         private string Password { get; set; }
         public string Email { get; private set; }
-        private int MatchCount { get; set; }
-        private int Wins { get; set; }
-        private int Loses { get; set; }
+        public int MatchCount { get; private set; }
+        public int Wins { get; private set; }
+        public int Loses { get; private set; }
 
         public User(){}
 
-        public User(string UserId, string Password, string Email = "")
+        public User(string UserId, string Password, string Email = "", int MatchCount = 0, int Wins = 0, int Loses = 0)
         {
             this.UserId     = UserId;
             this.Password   = Password;
             this.Email      = Email;
+            this.MatchCount = MatchCount;
+            this.Wins       = Wins;
+            this.Loses      = Loses;
         }
 
         public void ChangeEmail(string Email)
@@ -30,16 +33,16 @@
 
         public string GetPassword()
         {
-            return this.Password;
+            return Password;
         }
 
-        public void MatchWon(string UserId)
+        public void MatchWon()
         {
             MatchCount++;
             Wins++;
         }
 
-        public void MatchLost(string UserId)
+        public void MatchLost()
         {
             MatchCount++;
             Loses++;
