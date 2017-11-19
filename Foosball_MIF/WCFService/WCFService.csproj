@@ -68,6 +68,7 @@
     <Compile Include="FoosballWebService.svc.cs">
       <DependentUpon>FoosballWebService.svc</DependentUpon>
     </Compile>
+    <Compile Include="HelloWorldData.cs" />
     <Compile Include="IFoosballWebService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -97,7 +98,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51643</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51643/</IISUrl>
+          <IISUrl>http://localhost:9607/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
