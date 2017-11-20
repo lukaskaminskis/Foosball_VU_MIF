@@ -10,15 +10,15 @@
             <Button x:Name="Btn_HomeGoal" 
                     Grid.Row="0" 
                     Grid.ColumnSpan="2"
-                    Clicked="HomeGoalProcedure" 
                     BackgroundColor="Green"
                     TextColor="White"/>
+                    <!--Clicked="HomeGoalProcedure"--> 
             <Button x:Name="Btn_AwayGoal" 
                     Grid.Row="1" 
                     Grid.ColumnSpan="2" 
-                    Clicked="AwayGoalProcedure" 
                     BackgroundColor="Red"
                     TextColor="White"/>        
+                    <!--Clicked="AwayGoalProcedure"-->
         </Grid>
     </ContentPage.Content>
 </ContentPage>

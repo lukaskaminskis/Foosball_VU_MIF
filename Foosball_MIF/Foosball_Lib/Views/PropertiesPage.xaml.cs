@@ -20,7 +20,6 @@ namespace Foosball_Lib.Views
         async void Init()
         {
             Constants.userList      = await BackEnd.GetUserListAsync();
-            BackgroundColor         = Constants.BackgroundColor;
             Lbl_Hello.TextColor     = Constants.MainTextColor;
             Lbl_User.TextColor      = Constants.MainTextColor;
             Lbl_User.Text           = "Welcome " + Constants.LocalUser.UserId;
