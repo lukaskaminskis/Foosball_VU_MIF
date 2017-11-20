@@ -55,10 +55,6 @@ namespace Foosball_Lib.Views
                 await Navigation.PushModalAsync(new MatchPage(), false);
             }
         }
-        async void StartUploadProcess(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new UploadVisualContent(), false);
-        }
 
         protected override bool OnBackButtonPressed()
         {
