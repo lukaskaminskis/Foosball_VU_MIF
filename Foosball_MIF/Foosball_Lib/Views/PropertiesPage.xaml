@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Foosball_Lib.Views.PropertiesPage"
@@ -17,6 +17,7 @@
                 <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure"/>
                 <Button x:Name="Btn_ChooseOpponent" Text="Choose Opponent" Clicked="NewOponentProcedure" />
                 <Button x:Name="Btn_GoalLimit" Text="Set Goal limit" Clicked="SetGoalLimitProcedure" />
+                <Button x:Name="Btn_Uploadphotos" Text="Upload match photo" Clicked="StartUploadProcess" />
                 <Button Text="Logout" Clicked="Logout"/>
             </StackLayout>
         </StackLayout>
