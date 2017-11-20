@@ -58,35 +58,6 @@ namespace Foosball_Lib.Views
             };
         }
 
-        /*public async void HomeGoalProcedure(object e, EventArgs s)
-        {
-            homeGoalCount++;
-            Btn_HomeGoal.Text = Constants.LocalUser.UserId + " : " + homeGoalCount.ToString();
-            if (homeGoalCount >= Constants.GoalLimit)
-            {
-                homeGoalCount = 0;
-                awayGoalCount = 0;
-                MatchPlayedEvent(Constants.LocalUser, Constants.opponent);
-                await DisplayAlert(Labels.Win, Labels.Player + Constants.LocalUser.UserId + Labels.WonGame, Labels.Ok);
-                await Navigation.PopModalAsync(false);
-            }
-        } */
-
-        /*public async void AwayGoalProcedure(object e, EventArgs s)
-        {
-            awayGoalCount++;
-            Btn_AwayGoal.Text = Constants.opponent.UserId + " : " + awayGoalCount.ToString();
-
-            if (awayGoalCount >= Constants.GoalLimit)
-            {
-                homeGoalCount = 0;
-                awayGoalCount = 0;
-                MatchPlayedEvent(Constants.opponent, Constants.LocalUser);
-                await  DisplayAlert(Labels.Win, Labels.Player + Constants.opponent.UserId + Labels.WonGame, Labels.Ok);
-                await Navigation.PopModalAsync(false);
-            }
-        }*/
-
         protected override bool OnBackButtonPressed()
         {
             return true;
