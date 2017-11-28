@@ -1,7 +1,8 @@
 ﻿{
   "dependencies": {
     "C1.Xamarin.Forms.Core": "2.4.20173.222",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+    "Microsoft.Azure.Mobile.Client": "4.0.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.2",
     "Xamarin.Forms": "2.5.0.91635"
   },
   "frameworks": {

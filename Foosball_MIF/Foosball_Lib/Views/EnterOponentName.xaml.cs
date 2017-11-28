@@ -24,7 +24,7 @@ namespace Foosball_Lib.Views
 
         public async void SubmitProcedure(object e, EventArgs s)
         {
-            if (Validation.UsernamePatternMatch(Entry_OponentName.Text))
+            if (Validations.Validation.UsernamePatternMatch(Entry_OponentName.Text))
             {
                 //Constants.OponentName = Entry_OponentName.Text;
                 await Navigation.PopModalAsync();

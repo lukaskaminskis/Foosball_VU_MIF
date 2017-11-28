@@ -1,11 +1,9 @@
 ﻿using Foosball_Lib.Models;
-using Foosball_Lib.Validations;
-using Foosball_Lib.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Foosball_Lib.Validations;
 
 namespace Foosball_Lib.FileManagement
 {
@@ -17,9 +15,9 @@ namespace Foosball_Lib.FileManagement
         {
             try
             {
-                if (!Validation.UsernamePatternMatch(username)
-                        && !Validation.PasswordPatternMatch(password)
-                        && !Validation.PasswordPatternMatch(repeatPassword))
+                if (!Validations.Validation.UsernamePatternMatch(username)
+                        && !Validations.Validation.PasswordPatternMatch(password)
+                        && !Validations.Validation.PasswordPatternMatch(repeatPassword))
                 {
                     return Message.RegexNoMatch;
                 }
@@ -27,7 +25,7 @@ namespace Foosball_Lib.FileManagement
                 {
                     return Message.PassNoMatch;
                 }
-                else if (!Validation.EmailPatternMatch(email))
+                else if (!Validations.Validation.EmailPatternMatch(email))
                 {
                     return Message.EmailNotMatch;
                 }
