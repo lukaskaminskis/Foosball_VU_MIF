@@ -2,6 +2,7 @@
   "dependencies": {
     "C1.Xamarin.Forms.Core": "2.4.20173.222",
     "Microsoft.Azure.Mobile.Client": "4.0.2",
+    "Microsoft.Azure.Mobile.Client.SQLiteStore": "4.0.2",
     "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.2",
     "Xamarin.Forms": "2.5.0.91635"
   },

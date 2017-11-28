@@ -26,6 +26,9 @@ namespace Foosball_MIF.iOS
 			LoadApplication (new Foosball_MIF.App ());
 
 			return base.FinishedLaunching (app, options);
-		}
+
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            SQLitePCL.Batteries.Init();
+        }
 	}
 }

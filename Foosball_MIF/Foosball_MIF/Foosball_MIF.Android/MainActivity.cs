@@ -21,7 +21,10 @@ namespace Foosball_MIF.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 			LoadApplication (new Foosball_MIF.App ());
-		}
+
+            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+            SQLitePCL.Batteries.Init();
+        }
 	}
 }
 
