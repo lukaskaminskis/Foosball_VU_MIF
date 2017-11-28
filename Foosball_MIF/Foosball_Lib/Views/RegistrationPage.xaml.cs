@@ -11,6 +11,8 @@ namespace Foosball_Lib.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistrationPage : ContentPage
     {
+        private Message msg;
+
         public RegistrationPage()
         {
             InitializeComponent();
@@ -20,7 +22,6 @@ namespace Foosball_Lib.Views
         async void Init()
         {
             Constants.userList              = await GetUserListAsync();
-            BackgroundColor                 = Constants.BackgroundColor;
             Lbl_Username.TextColor          = Constants.MainTextColor;
             Lbl_Password.TextColor          = Constants.MainTextColor;
             Lbl_RepeatPassword.TextColor    = Constants.MainTextColor;
@@ -36,7 +37,7 @@ namespace Foosball_Lib.Views
         {
             BackEnd backEnd = new BackEnd();
 
-            switch (await backEnd.BackEndAsync(Entry_Username.Text, Entry_Password.Text, Entry_RepeatPassword.Text, Entry_Email.Text))
+            /*switch (await backEnd.BackEndAsync(Entry_Username.Text, Entry_Password.Text, Entry_RepeatPassword.Text, Entry_Email.Text))
             {
                 case Message.RegexNoMatch:
                     await DisplayAlert(Labels.Failed, Labels.NoMatch, Labels.Ok);
@@ -57,7 +58,28 @@ namespace Foosball_Lib.Views
                 case Message.Exc:
                     await DisplayAlert(Labels.Exc, Labels.Exception, Labels.Ok);
                     break;
-            }  
+            }*/
+
+            try
+            {
+                msg = await backEnd.BackEndAsync(Entry_Username.Text, Entry_Password.Text, Entry_RepeatPassword.Text, Entry_Email.Text);
+            }
+            catch (ArgumentException exc)
+            {
+                await DisplayAlert(Labels.Exc, exc.ToString(), Labels.Ok);
+            }
+            catch (Exception exc)
+            {
+                await DisplayAlert(Labels.Exc, exc.ToString(), Labels.Ok);
+            }
+            finally
+            {
+                if (msg == Message.RegSucc)
+                {
+                    await DisplayAlert(Labels.Registration, Labels.RegSucc, Labels.Ok);
+                    await Navigation.PopModalAsync();
+                }
+            }
         }
     }
 }

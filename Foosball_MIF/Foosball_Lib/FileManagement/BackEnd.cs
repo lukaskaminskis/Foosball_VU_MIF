@@ -21,14 +21,17 @@ namespace Foosball_Lib.FileManagement
                         && !Validation.PasswordPatternMatch(password)
                         && !Validation.PasswordPatternMatch(repeatPassword))
                 {
+                    throw new ArgumentException(Labels.NoMatch);
                     return Message.RegexNoMatch;
                 }
                 else if (password != repeatPassword)
                 {
+                    throw new Exception(Labels.NoMatch);
                     return Message.PassNoMatch;
                 }
                 else if (!Validation.EmailPatternMatch(email))
                 {
+                    throw new Exception(Labels.EmailNotMatch);
                     return Message.EmailNotMatch;
                 }
                 else
@@ -58,6 +61,7 @@ namespace Foosball_Lib.FileManagement
                         }
                         else
                         {
+                            throw new Exception(Labels.UserExists);
                             return Message.UserExists;
                         }
 

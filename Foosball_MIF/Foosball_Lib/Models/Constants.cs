@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Foosball_Lib.FileManagement;
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace Foosball_Lib.Models
@@ -11,6 +13,7 @@ namespace Foosball_Lib.Models
         public static int MaxGoalLimit = 10;
 
         public static List<User> userList;
+        //public static Lazy<List<User>> userList => BackEnd.GetUserListAsync();
         public static User opponent;
         public static User LocalUser;
         public static int GoalLimit = 10;
