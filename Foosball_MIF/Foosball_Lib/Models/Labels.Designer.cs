@@ -62,6 +62,15 @@ namespace Foosball_Lib.Models {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://frisbyball.azurewebsites.net/.
+        /// </summary>
+        internal static string AppUrl {
+            get {
+                return ResourceManager.GetString("AppUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email doesn not match pattern , please repeat.
         /// </summary>
         internal static string EmailNotMatch {

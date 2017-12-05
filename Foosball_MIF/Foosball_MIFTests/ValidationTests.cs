@@ -1,7 +1,5 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Foosball_Lib.Validations;
-using System.Text.RegularExpressions;
 
 namespace Foosball_MIFTests
 {

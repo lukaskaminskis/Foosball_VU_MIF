@@ -17,7 +17,9 @@
                 <Button x:Name="Btn_PlayGame" Text="Start match!" Clicked="StartMatchProcedure"/>
                 <Button x:Name="Btn_ChooseOpponent" Text="Choose Opponent" Clicked="NewOponentProcedure" />
                 <Button x:Name="Btn_GoalLimit" Text="Set Goal limit" Clicked="SetGoalLimitProcedure" />
-                <Button Text="Logout" Clicked="Logout"/>
+                <Button x:Name="Btn_Logout" Text="Logout" Clicked="Logout"/>
+                <!--  Cloud testing -->
+                <Button x:Name="Btn_TesCloud" Text="Cloud test" Clicked="ToCloudProcedure" />
             </StackLayout>
         </StackLayout>
       

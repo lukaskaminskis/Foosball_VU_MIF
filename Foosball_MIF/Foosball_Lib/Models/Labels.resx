@@ -192,4 +192,7 @@
   <data name="NoUsers" xml:space="preserve">
     <value>There are no users in database, failed to login</value>
   </data>
+  <data name="AppUrl" xml:space="preserve">
+    <value>https://frisbyball.azurewebsites.net/</value>
+  </data>
 </root>

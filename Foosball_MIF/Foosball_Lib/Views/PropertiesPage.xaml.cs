@@ -19,11 +19,11 @@ namespace Foosball_Lib.Views
 
         async void Init()
         {
-            Constants.userList      = await BackEnd.GetUserListAsync();
-            Lbl_Hello.TextColor     = Constants.MainTextColor;
-            Lbl_User.TextColor      = Constants.MainTextColor;
-            Lbl_User.Text           = "Welcome " + Constants.LocalUser.UserId;
-            LogoIcon.HeightRequest  = Constants.LoginIconHeight;
+            Constants.userList = await BackEnd.GetUserListAsync();
+            Lbl_Hello.TextColor = Constants.MainTextColor;
+            Lbl_User.TextColor = Constants.MainTextColor;
+            Lbl_User.Text = "Welcome " + Constants.LocalUser.UserId;
+            LogoIcon.HeightRequest = Constants.LoginIconHeight;
         }
 
         public async void NewOponentProcedure(object e, EventArgs s)
@@ -59,5 +59,10 @@ namespace Foosball_Lib.Views
         {
             return true;
         }
-    }
+
+        async void ToCloudProcedure(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new TestCloud());
+        }
+    } 
 }
